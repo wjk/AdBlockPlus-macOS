@@ -15,7 +15,11 @@ class ViewController: NSViewController {
 	
 	override func viewDidAppear() {
 		super.viewDidAppear()
-		view.window?.titleVisibility = .hidden
+
+		if let window = view.window {
+			window.title = localize("AdBlockPlus Settings", "Localizable")
+			window.titleVisibility = .hidden
+		}
 	}
 	
 	override var representedObject: AnyObject? {

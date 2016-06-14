@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4B83851D10A774005D0431 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F4B83871D10A774005D0431 /* Localizable.strings */; };
 		1FCD37291D10A32400A70971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCD37281D10A32400A70971 /* AppDelegate.swift */; };
 		1FCD372B1D10A32400A70971 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCD372A1D10A32400A70971 /* ViewController.swift */; };
 		1FCD372D1D10A32400A70971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FCD372C1D10A32400A70971 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F4B83861D10A774005D0431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1FCD37251D10A32400A70971 /* AdBlockPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdBlockPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCD37281D10A32400A70971 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FCD372A1D10A32400A70971 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				1FCD37281D10A32400A70971 /* AppDelegate.swift */,
 				1FCD372A1D10A32400A70971 /* ViewController.swift */,
 				1FCD372E1D10A32400A70971 /* Main.storyboard */,
+				1F4B83871D10A774005D0431 /* Localizable.strings */,
 				1FCD37381D10A38B00A70971 /* Supporting Files */,
 			);
 			path = AdBlockPlus;
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FCD372D1D10A32400A70971 /* Assets.xcassets in Resources */,
+				1F4B83851D10A774005D0431 /* Localizable.strings in Resources */,
 				1FCD37301D10A32400A70971 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +161,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1F4B83871D10A774005D0431 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F4B83861D10A774005D0431 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		1FCD372E1D10A32400A70971 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -301,6 +313,7 @@
 				1FCD37361D10A32400A70971 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

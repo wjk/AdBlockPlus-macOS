@@ -20,6 +20,7 @@
 		1FCD372C1D10A32400A70971 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FCD372F1D10A32400A70971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FCD37311D10A32400A70971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FCD37371D10A37A00A70971 /* AdBlockPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AdBlockPlus.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +55,20 @@
 			children = (
 				1FCD37281D10A32400A70971 /* AppDelegate.swift */,
 				1FCD372A1D10A32400A70971 /* ViewController.swift */,
-				1FCD372C1D10A32400A70971 /* Assets.xcassets */,
 				1FCD372E1D10A32400A70971 /* Main.storyboard */,
-				1FCD37311D10A32400A70971 /* Info.plist */,
+				1FCD37381D10A38B00A70971 /* Supporting Files */,
 			);
 			path = AdBlockPlus;
+			sourceTree = "<group>";
+		};
+		1FCD37381D10A38B00A70971 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FCD372C1D10A32400A70971 /* Assets.xcassets */,
+				1FCD37311D10A32400A70971 /* Info.plist */,
+				1FCD37371D10A37A00A70971 /* AdBlockPlus.entitlements */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +106,11 @@
 						DevelopmentTeam = 3P242C9ES5;
 						DevelopmentTeamName = "William Kent";
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -243,6 +258,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AdBlockPlus/AdBlockPlus.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AdBlockPlus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -256,6 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AdBlockPlus/AdBlockPlus.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AdBlockPlus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

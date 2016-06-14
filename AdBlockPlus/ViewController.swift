@@ -8,6 +8,14 @@
 
 import Cocoa
 
+class WindowController: NSWindowController {
+	override func awakeFromNib() {
+		window?.titleVisibility = .hidden
+	}
+}
+
+// MARK:
+
 class ViewController: NSViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()

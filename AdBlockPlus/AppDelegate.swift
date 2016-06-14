@@ -24,5 +24,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 func localize(_ key: String, _ table: String) -> String {
-	return Bundle.main().localizedString(forKey: key, value: nil, table: table)
+	return Bundle(for: AppDelegate.self).localizedString(forKey: key, value: nil, table: table)
 }

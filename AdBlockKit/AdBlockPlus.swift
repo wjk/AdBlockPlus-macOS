@@ -42,8 +42,9 @@ public class AdBlockPlus {
 				components.removeLast()
 			}
 
+			let teamID = ABPGetApplicationSigningIdentifier()
 			let revisedBundleId = components.joined(separator: ".")
-			return "group.\(revisedBundleId).\(AdblockPlusSafariExtension)"
+			return "\(teamID).\(revisedBundleId).\(AdblockPlusSafariExtension)"
 		}
 	}
 

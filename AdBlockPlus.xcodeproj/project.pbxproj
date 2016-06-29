@@ -12,6 +12,7 @@
 		1FCD372B1D10A32400A70971 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCD372A1D10A32400A70971 /* ViewController.swift */; };
 		1FCD372D1D10A32400A70971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FCD372C1D10A32400A70971 /* Assets.xcassets */; };
 		1FCD37301D10A32400A70971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FCD372E1D10A32400A70971 /* Main.storyboard */; };
+		1FFEDF471D2471D800A7E0DA /* NotificationUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		1FCD372F1D10A32400A70971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FCD37311D10A32400A70971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FCD37371D10A37A00A70971 /* AdBlockPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AdBlockPlus.entitlements; sourceTree = "<group>"; };
+		1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				1FCD37281D10A32400A70971 /* AppDelegate.swift */,
 				1FCD372A1D10A32400A70971 /* ViewController.swift */,
+				1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */,
 				1FCD372E1D10A32400A70971 /* Main.storyboard */,
 				1F4B83871D10A774005D0431 /* Localizable.strings */,
 				1FCD37381D10A38B00A70971 /* Supporting Files */,
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FFEDF471D2471D800A7E0DA /* NotificationUtilities.swift in Sources */,
 				1FCD372B1D10A32400A70971 /* ViewController.swift in Sources */,
 				1FCD37291D10A32400A70971 /* AppDelegate.swift in Sources */,
 			);

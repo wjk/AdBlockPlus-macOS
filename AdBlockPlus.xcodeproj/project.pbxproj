@@ -12,8 +12,35 @@
 		1FCD372B1D10A32400A70971 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCD372A1D10A32400A70971 /* ViewController.swift */; };
 		1FCD372D1D10A32400A70971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FCD372C1D10A32400A70971 /* Assets.xcassets */; };
 		1FCD37301D10A32400A70971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FCD372E1D10A32400A70971 /* Main.storyboard */; };
+		1FE46EF01D2479760061C8CB /* AdBlockKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FE46EEF1D2479760061C8CB /* AdBlockKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FE46EF41D2479760061C8CB /* AdBlockKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE46EED1D2479760061C8CB /* AdBlockKit.framework */; };
+		1FE46EF51D2479760061C8CB /* AdBlockKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE46EED1D2479760061C8CB /* AdBlockKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1FFEDF471D2471D800A7E0DA /* NotificationUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FE46EF21D2479760061C8CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FCD371D1D10A32300A70971 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FE46EEC1D2479760061C8CB;
+			remoteInfo = AdBlockKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1FE46EF91D2479770061C8CB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1FE46EF51D2479760061C8CB /* AdBlockKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1F4B83861D10A774005D0431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -24,11 +51,22 @@
 		1FCD372F1D10A32400A70971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FCD37311D10A32400A70971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FCD37371D10A37A00A70971 /* AdBlockPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AdBlockPlus.entitlements; sourceTree = "<group>"; };
+		1FE46EED1D2479760061C8CB /* AdBlockKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdBlockKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FE46EEF1D2479760061C8CB /* AdBlockKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdBlockKit.h; sourceTree = "<group>"; };
+		1FE46EF11D2479760061C8CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1FCD37221D10A32300A70971 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE46EF41D2479760061C8CB /* AdBlockKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE46EE91D2479760061C8CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				1FCD37271D10A32400A70971 /* AdBlockPlus */,
+				1FE46EEE1D2479760061C8CB /* AdBlockKit */,
 				1FCD37261D10A32400A70971 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				1FCD37251D10A32400A70971 /* AdBlockPlus.app */,
+				1FE46EED1D2479760061C8CB /* AdBlockKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,7 +117,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1FE46EEE1D2479760061C8CB /* AdBlockKit */ = {
+			isa = PBXGroup;
+			children = (
+				1FE46EEF1D2479760061C8CB /* AdBlockKit.h */,
+				1FE46EF11D2479760061C8CB /* Info.plist */,
+			);
+			path = AdBlockKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1FE46EEA1D2479760061C8CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE46EF01D2479760061C8CB /* AdBlockKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		1FCD37241D10A32300A70971 /* AdBlockPlus */ = {
@@ -87,15 +147,35 @@
 				1FCD37211D10A32300A70971 /* Sources */,
 				1FCD37221D10A32300A70971 /* Frameworks */,
 				1FCD37231D10A32300A70971 /* Resources */,
+				1FE46EF91D2479770061C8CB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1FE46EF31D2479760061C8CB /* PBXTargetDependency */,
 			);
 			name = AdBlockPlus;
 			productName = AdBlockPlus;
 			productReference = 1FCD37251D10A32400A70971 /* AdBlockPlus.app */;
 			productType = "com.apple.product-type.application";
+		};
+		1FE46EEC1D2479760061C8CB /* AdBlockKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FE46EF81D2479770061C8CB /* Build configuration list for PBXNativeTarget "AdBlockKit" */;
+			buildPhases = (
+				1FE46EE81D2479760061C8CB /* Sources */,
+				1FE46EE91D2479760061C8CB /* Frameworks */,
+				1FE46EEA1D2479760061C8CB /* Headers */,
+				1FE46EEB1D2479760061C8CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdBlockKit;
+			productName = AdBlockKit;
+			productReference = 1FE46EED1D2479760061C8CB /* AdBlockKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -118,6 +198,12 @@
 							};
 						};
 					};
+					1FE46EEC1D2479760061C8CB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3P242C9ES5;
+						DevelopmentTeamName = "William Kent";
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 1FCD37201D10A32300A70971 /* Build configuration list for PBXProject "AdBlockPlus" */;
@@ -134,6 +220,7 @@
 			projectRoot = "";
 			targets = (
 				1FCD37241D10A32300A70971 /* AdBlockPlus */,
+				1FE46EEC1D2479760061C8CB /* AdBlockKit */,
 			);
 		};
 /* End PBXProject section */
@@ -146,6 +233,13 @@
 				1FCD372D1D10A32400A70971 /* Assets.xcassets in Resources */,
 				1F4B83851D10A774005D0431 /* Localizable.strings in Resources */,
 				1FCD37301D10A32400A70971 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE46EEB1D2479760061C8CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +256,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FE46EE81D2479760061C8CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FE46EF31D2479760061C8CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FE46EEC1D2479760061C8CB /* AdBlockKit */;
+			targetProxy = 1FE46EF21D2479760061C8CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1F4B83871D10A774005D0431 /* Localizable.strings */ = {
@@ -298,6 +407,50 @@
 			};
 			name = Release;
 		};
+		1FE46EF61D2479760061C8CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = AdBlockKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.sunsol.AdBlockKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1FE46EF71D2479760061C8CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = AdBlockKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.sunsol.AdBlockKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -318,6 +471,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		1FE46EF81D2479770061C8CB /* Build configuration list for PBXNativeTarget "AdBlockKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FE46EF61D2479760061C8CB /* Debug */,
+				1FE46EF71D2479760061C8CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

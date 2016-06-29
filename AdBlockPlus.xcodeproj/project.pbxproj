@@ -15,6 +15,8 @@
 		1FE46EF01D2479760061C8CB /* AdBlockKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FE46EEF1D2479760061C8CB /* AdBlockKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FE46EF41D2479760061C8CB /* AdBlockKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE46EED1D2479760061C8CB /* AdBlockKit.framework */; };
 		1FE46EF51D2479760061C8CB /* AdBlockKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE46EED1D2479760061C8CB /* AdBlockKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1FE46EFB1D247A1D0061C8CB /* AdBlockPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE46EFA1D247A1D0061C8CB /* AdBlockPlus.swift */; };
+		1FE46EFD1D247E090061C8CB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE46EFC1D247E090061C8CB /* Utilities.swift */; };
 		1FFEDF471D2471D800A7E0DA /* NotificationUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		1FE46EED1D2479760061C8CB /* AdBlockKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdBlockKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE46EEF1D2479760061C8CB /* AdBlockKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdBlockKit.h; sourceTree = "<group>"; };
 		1FE46EF11D2479760061C8CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FE46EFA1D247A1D0061C8CB /* AdBlockPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBlockPlus.swift; sourceTree = "<group>"; };
+		1FE46EFC1D247E090061C8CB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +124,8 @@
 		1FE46EEE1D2479760061C8CB /* AdBlockKit */ = {
 			isa = PBXGroup;
 			children = (
+				1FE46EFA1D247A1D0061C8CB /* AdBlockPlus.swift */,
+				1FE46EFC1D247E090061C8CB /* Utilities.swift */,
 				1FE46EEF1D2479760061C8CB /* AdBlockKit.h */,
 				1FE46EF11D2479760061C8CB /* Info.plist */,
 			);
@@ -202,6 +208,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3P242C9ES5;
 						DevelopmentTeamName = "William Kent";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -260,6 +267,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE46EFD1D247E090061C8CB /* Utilities.swift in Sources */,
+				1FE46EFB1D247A1D0061C8CB /* AdBlockPlus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +391,7 @@
 		1FCD37351D10A32400A70971 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AdBlockPlus/AdBlockPlus.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -396,6 +406,7 @@
 		1FCD37361D10A32400A70971 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AdBlockPlus/AdBlockPlus.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -410,6 +421,7 @@
 		1FE46EF61D2479760061C8CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -423,6 +435,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.sunsol.AdBlockKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -432,6 +445,7 @@
 		1FE46EF71D2479760061C8CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

@@ -10,3 +10,4 @@
 
 extern double AdBlockKitVersionNumber;
 extern const unsigned char AdBlockKitVersionString[];
+

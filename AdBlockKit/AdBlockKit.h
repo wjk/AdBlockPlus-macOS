@@ -11,3 +11,4 @@
 extern double AdBlockKitVersionNumber;
 extern const unsigned char AdBlockKitVersionString[];
 
+extern NSString *ABPGetApplicationSigningIdentifier(void);

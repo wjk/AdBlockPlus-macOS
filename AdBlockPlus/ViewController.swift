@@ -28,6 +28,23 @@ class WindowController: NSWindowController {
 		let note = Notification(name: ABPMainViewChangedNotification, object: self, userInfo: [ "view": viewId ])
 		note.post()
 	}
+
+	override func windowDidLoad() {
+		super.windowDidLoad()
+
+		NotificationCenter.default().addObserver(name: ABPDisplayErrorNotification, sender: nil, owner: self) {
+			[weak self] note in
+			guard let userInfo = note.userInfo else { return }
+			let error = userInfo["error"] as! NSError
+			let alert = NSAlert(error: error)
+
+			if let window = self?.window {
+				alert.beginSheetModal(for: window, completionHandler: nil)
+			} else {
+				alert.runModal()
+			}
+		}
+	}
 }
 
 class ViewController: NSViewController {

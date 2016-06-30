@@ -8,6 +8,10 @@
 
 import Cocoa
 
+// This notification is observed by the main window controller. It will create an NSAlert
+// object from the NSError object kept within the notification's userInfo dictionary
+// (key = "error") and display it as it sees fit.
+internal let ABPDisplayErrorNotification = NotificationName("ABPDisplayErrorNotification")
 private var ABPMainViewChangedNotification = NotificationName("ABPMainViewChangedNotification")
 
 private enum MainWindowView: Int {

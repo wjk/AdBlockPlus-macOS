@@ -7,3 +7,7 @@
 */
 
 "AdBlockPlus Settings" = "AdBlockPlus Settings";
+
+// NSError strings.
+"Failed to update filter lists." = "Failed to update filter lists.";
+"Please try again later." = "Please try again later.";

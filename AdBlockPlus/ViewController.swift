@@ -60,7 +60,6 @@ class WindowController: NSWindowController {
 
 class ViewController: NSViewController {
 	@IBOutlet private var viewBox: NSBox!
-	private var notificationListeners: [AnyObject] = []
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

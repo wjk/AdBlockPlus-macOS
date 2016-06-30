@@ -49,7 +49,7 @@ public class AdBlockPlus: NSObject {
 	}
 
 	public override init() {
-		guard let path = Bundle.main().urlForResource("FilterLists", withExtension: "plist") else {
+		guard let path = Bundle(for: AdBlockPlus.self).urlForResource("FilterLists", withExtension: "plist") else {
 			fatalError("FilterLists.plist not found")
 		}
 

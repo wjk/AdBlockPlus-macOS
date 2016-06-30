@@ -35,7 +35,7 @@ NSString *ABPGetApplicationSigningIdentifier(void) {
 
 		CFStringRef teamIDCF = CFDictionaryGetValue(codeAttributes, kSecCodeInfoTeamIdentifier);
 		NSCAssert(teamIDCF != NULL, @"Could not retrieve Team Identifier");
-		teamID = (__bridge_transfer NSString *)teamIDCF;
+		teamID = (__bridge NSString *)teamIDCF;
 	});
 
 	return teamID;

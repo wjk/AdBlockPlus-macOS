@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F40592B1D25936B00BD4B5E /* FilterLists.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F40592A1D25936B00BD4B5E /* FilterLists.plist */; };
 		1F4B83851D10A774005D0431 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F4B83871D10A774005D0431 /* Localizable.strings */; };
 		1F9D7ED41D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D7ED31D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m */; };
 		1F9D7ED61D2497330096D3A9 /* AdBlockPlusExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D7ED51D2497330096D3A9 /* AdBlockPlusExtras.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F40592A1D25936B00BD4B5E /* FilterLists.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterLists.plist; sourceTree = "<group>"; };
 		1F4B83861D10A774005D0431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F9D7ED31D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABPGetApplicationSigningIdentifier.m; sourceTree = "<group>"; };
 		1F9D7ED51D2497330096D3A9 /* AdBlockPlusExtras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBlockPlusExtras.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				1FE46EFA1D247A1D0061C8CB /* AdBlockPlus.swift */,
 				1FE46EEF1D2479760061C8CB /* AdBlockKit.h */,
 				1F9D7ED31D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m */,
+				1F40592A1D25936B00BD4B5E /* FilterLists.plist */,
 				1FE46EF11D2479760061C8CB /* Info.plist */,
 			);
 			path = AdBlockKit;
@@ -250,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F40592B1D25936B00BD4B5E /* FilterLists.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

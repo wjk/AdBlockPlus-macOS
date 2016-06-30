@@ -107,7 +107,7 @@ public class AdBlockPlus: NSObject {
 
 	public var backgroundSessionConfigurationIdentifier: String {
 		get {
-			fatalError()
+			return "me.sunsol.AdBlockPlus.BackgroundSession"
 		}
 	}
 

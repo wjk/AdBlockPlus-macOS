@@ -190,7 +190,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 	func updateFilterLists(userTriggered: Bool) {
 		guard let backgroundSession = self.backgroundSession else {
 			if userTriggered {
-				// TODO: Present error here.
+				needsDisplayError = true
 			}
 
 			return

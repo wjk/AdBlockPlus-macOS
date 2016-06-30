@@ -29,7 +29,7 @@ private let ABPWhitelistedWebsitesDefaultsKey = "AdblockPlusWhitelistedWebsites"
 private let AdblockPlusSafariExtension = "AdblockPlusSafariExtension"
 
 public class AdBlockPlus: NSObject {
-	private static var group: String {
+	public static var applicationGroup: String {
 		get {
 			guard let bundleId = Bundle.main().bundleIdentifier else {
 				fatalError("Could not get the bundle ID of the main bundle")
@@ -62,8 +62,8 @@ public class AdBlockPlus: NSObject {
 			filterLists = [:]
 		}
 
-		guard let defaults = UserDefaults(suiteName: AdBlockPlus.group) else {
-			fatalError("Could not create NSUserDefaults suite with name '\(AdBlockPlus.group)'")
+		guard let defaults = UserDefaults(suiteName: AdBlockPlus.applicationGroup) else {
+			fatalError("Could not create NSUserDefaults suite with name '\(AdBlockPlus.applicationGroup)'")
 		}
 		adBlockPlusDetails = defaults
 		adBlockPlusDetails.register([

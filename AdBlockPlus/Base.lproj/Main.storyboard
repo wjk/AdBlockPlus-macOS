@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11129.15"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -212,11 +213,80 @@
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="620" height="340"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box title="Box" boxType="oldStyle" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="0bT-F3-oSL">
+                                <rect key="frame" x="0.0" y="0.0" width="620" height="340"/>
+                                <view key="contentView" id="Rih-lh-h6l">
+                                    <rect key="frame" x="0.0" y="0.0" width="620" height="340"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0bT-F3-oSL" secondAttribute="bottom" id="1Mc-7x-9er"/>
+                            <constraint firstItem="0bT-F3-oSL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="PJY-ma-dK8"/>
+                            <constraint firstItem="0bT-F3-oSL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="b2O-xz-cSL"/>
+                            <constraint firstAttribute="trailing" secondItem="0bT-F3-oSL" secondAttribute="trailing" id="dtv-HK-FcM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="viewBox" destination="0bT-F3-oSL" id="iwo-wg-rAL"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="144" y="777"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tUy-au-jM3">
+            <objects>
+                <viewController storyboardIdentifier="ABPWelcomePane" id="Eh4-Kq-qck" sceneMemberID="viewController">
+                    <view key="view" id="sdF-ZK-lqg">
+                        <rect key="frame" x="0.0" y="0.0" width="620" height="340"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nFb-Fs-IYR">
+                                <rect key="frame" x="18" y="303" width="281" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Welcome to AdBlock Plus for macOS Sierra" id="u0o-2V-VeR">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="faF-JQ-rGg">
+                                <rect key="frame" x="18" y="278" width="460" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="To enable AdBlock Plus, open the Extensions pane of System Preferences…" id="YB4-Cv-ykT">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="8DZ-n8-SvW">
+                                <rect key="frame" x="18" y="20" width="584" height="68"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="x7p-MK-7ew">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">We’d like to encourage websites to use straightforward, nonintrusive advertising. That’s why we’ve established strict guidelines to identify Acceptable Ads, which are shown under default settings. If you wish to browse entirely ad-free, you can disable this setting at any time on the Exceptions tab of this app.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="nFb-Fs-IYR" firstAttribute="top" secondItem="sdF-ZK-lqg" secondAttribute="top" constant="20" id="1a5-UF-CQt"/>
+                            <constraint firstItem="faF-JQ-rGg" firstAttribute="leading" secondItem="sdF-ZK-lqg" secondAttribute="leading" constant="20" id="1vg-rp-j7M"/>
+                            <constraint firstItem="8DZ-n8-SvW" firstAttribute="leading" secondItem="sdF-ZK-lqg" secondAttribute="leading" constant="20" id="HNa-R1-LsW"/>
+                            <constraint firstItem="faF-JQ-rGg" firstAttribute="top" secondItem="nFb-Fs-IYR" secondAttribute="bottom" constant="8" id="IIc-SJ-0Kk"/>
+                            <constraint firstAttribute="bottom" secondItem="8DZ-n8-SvW" secondAttribute="bottom" constant="20" id="RDU-h0-ogN"/>
+                            <constraint firstAttribute="trailing" secondItem="8DZ-n8-SvW" secondAttribute="trailing" constant="20" id="YdK-IV-BFJ"/>
+                            <constraint firstItem="nFb-Fs-IYR" firstAttribute="leading" secondItem="sdF-ZK-lqg" secondAttribute="leading" constant="20" id="iPM-yZ-VbS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="Sjn-AF-vff" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-165" y="1230"/>
         </scene>
     </scenes>
 </document>

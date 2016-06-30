@@ -59,15 +59,30 @@ class WindowController: NSWindowController {
 }
 
 class ViewController: NSViewController {
+	@IBOutlet private var viewBox: NSBox!
 	private var notificationListeners: [AnyObject] = []
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		let storyboard = NSStoryboard(name: "Main", bundle: nil)
 		NotificationCenter.default().addObserver(name: ABPMainViewChangedNotification, sender: nil, owner: self) {
-			note in
-			// ...
+			[weak self] note in
+			guard let userInfo = note.userInfo else { return }
+			guard let viewIdObj = userInfo["view"] else { return }
+			let viewId = viewIdObj as! MainWindowView
+
+			let viewController: NSViewController?
+			switch viewId {
+			case .Welcome: viewController = (storyboard.instantiateController(withIdentifier: "ABPWelcomePane") as! NSViewController)
+			default: viewController = nil
+			}
+
+			self?.viewBox.contentView = viewController?.view
 		}
+
+		let viewController = storyboard.instantiateController(withIdentifier: "ABPWelcomePane")
+		viewBox.contentView = viewController.view
 	}
 	
 	override var representedObject: AnyObject? {

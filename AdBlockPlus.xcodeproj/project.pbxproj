@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F40592B1D25936B00BD4B5E /* FilterLists.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F40592A1D25936B00BD4B5E /* FilterLists.plist */; };
+		1F40592F1D2593C200BD4B5E /* ExceptionsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F40592E1D2593C200BD4B5E /* ExceptionsListController.swift */; };
 		1F4B83851D10A774005D0431 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F4B83871D10A774005D0431 /* Localizable.strings */; };
 		1F9D7ED41D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D7ED31D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m */; };
 		1F9D7ED61D2497330096D3A9 /* AdBlockPlusExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D7ED51D2497330096D3A9 /* AdBlockPlusExtras.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		1F40592A1D25936B00BD4B5E /* FilterLists.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterLists.plist; sourceTree = "<group>"; };
+		1F40592E1D2593C200BD4B5E /* ExceptionsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExceptionsListController.swift; sourceTree = "<group>"; };
 		1F4B83861D10A774005D0431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F9D7ED31D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABPGetApplicationSigningIdentifier.m; sourceTree = "<group>"; };
 		1F9D7ED51D2497330096D3A9 /* AdBlockPlusExtras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBlockPlusExtras.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				1FCD372A1D10A32400A70971 /* ViewController.swift */,
 				1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */,
 				1F9D7ED51D2497330096D3A9 /* AdBlockPlusExtras.swift */,
+				1F40592E1D2593C200BD4B5E /* ExceptionsListController.swift */,
 				1FCD372E1D10A32400A70971 /* Main.storyboard */,
 				1F4B83871D10A774005D0431 /* Localizable.strings */,
 				1FCD37381D10A38B00A70971 /* Supporting Files */,
@@ -205,6 +208,9 @@
 						DevelopmentTeamName = "William Kent";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -266,6 +272,7 @@
 			files = (
 				1FFEDF471D2471D800A7E0DA /* NotificationUtilities.swift in Sources */,
 				1F9D7ED61D2497330096D3A9 /* AdBlockPlusExtras.swift in Sources */,
+				1F40592F1D2593C200BD4B5E /* ExceptionsListController.swift in Sources */,
 				1FCD372B1D10A32400A70971 /* ViewController.swift in Sources */,
 				1FCD37291D10A32400A70971 /* AppDelegate.swift in Sources */,
 			);

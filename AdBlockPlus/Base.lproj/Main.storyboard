@@ -288,10 +288,10 @@
             </objects>
             <point key="canvasLocation" x="-165" y="1230"/>
         </scene>
-        <!--View Controller-->
+        <!--Exceptions List Controller-->
         <scene sceneID="6tk-eP-voy">
             <objects>
-                <viewController storyboardIdentifier="ABPWhitelistPane" id="58N-RH-xjy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ABPWhitelistPane" id="58N-RH-xjy" customClass="ExceptionsListController" customModule="AdBlockPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9AI-pF-tW5">
                         <rect key="frame" x="0.0" y="0.0" width="620" height="340"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -302,6 +302,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="toggleAcceptableAdsCheckboxWithSender:" target="58N-RH-xjy" id="COp-O7-sRP"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NT3-z3-Ow9">
                                 <rect key="frame" x="18" y="303" width="132" height="17"/>
@@ -460,6 +463,10 @@
                             <constraint firstItem="d3S-rA-O7r" firstAttribute="leading" secondItem="9AI-pF-tW5" secondAttribute="leading" constant="20" id="vFR-8P-3nI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="acceptableAdsCheckbox" destination="d3S-rA-O7r" id="3Nj-FX-Ma5"/>
+                        <outlet property="whitelistTableView" destination="Tzh-Bc-dop" id="K86-SP-6YR"/>
+                    </connections>
                 </viewController>
                 <customObject id="RIf-R8-Dcj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

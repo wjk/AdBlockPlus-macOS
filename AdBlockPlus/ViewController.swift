@@ -60,9 +60,11 @@ class WindowController: NSWindowController {
 
 class ViewController: NSViewController {
 	@IBOutlet private var viewBox: NSBox!
+	private var currentViewController: NSViewController?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		representedObject = AdBlockPlusExtras()
 
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
 		NotificationCenter.default().addObserver(name: ABPMainViewChangedNotification, sender: nil, owner: self) {
@@ -71,18 +73,20 @@ class ViewController: NSViewController {
 			guard let viewIdObj = userInfo["view"] else { return }
 			let viewId = viewIdObj as! MainWindowView
 
-			let viewController: NSViewController?
-			switch viewId {
-			case .Welcome: viewController = (storyboard.instantiateController(withIdentifier: "ABPWelcomePane") as! NSViewController)
-			case .Exceptions: viewController = (storyboard.instantiateController(withIdentifier: "ABPWhitelistPane") as! NSViewController)
-			default: viewController = nil
-			}
+			if let this = self {
+				switch viewId {
+				case .Welcome: this.currentViewController = (storyboard.instantiateController(withIdentifier: "ABPWelcomePane") as! NSViewController)
+				case .Exceptions: this.currentViewController = (storyboard.instantiateController(withIdentifier: "ABPWhitelistPane") as! NSViewController)
+				default: this.currentViewController = nil
+				}
 
-			self?.viewBox.contentView = viewController?.view
+				this.currentViewController?.representedObject = this.representedObject
+				this.viewBox.contentView = this.currentViewController?.view
+			}
 		}
 
-		let viewController = storyboard.instantiateController(withIdentifier: "ABPWelcomePane")
-		viewBox.contentView = viewController.view
+		currentViewController = (storyboard.instantiateController(withIdentifier: "ABPWelcomePane") as! NSViewController)
+		viewBox.contentView = currentViewController!.view
 	}
 	
 	override var representedObject: AnyObject? {

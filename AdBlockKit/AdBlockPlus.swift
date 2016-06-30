@@ -31,20 +31,8 @@ private let AdblockPlusSafariExtension = "AdblockPlusSafariExtension"
 public class AdBlockPlus: NSObject {
 	public static var applicationGroup: String {
 		get {
-			guard let bundleId = Bundle.main().bundleIdentifier else {
-				fatalError("Could not get the bundle ID of the main bundle")
-			}
-
-			var components = bundleId.components(separatedBy: ".")
-			if let last = components.last where last == AdblockPlusSafariExtension {
-				components.removeLast(2)
-			} else {
-				components.removeLast()
-			}
-
 			let teamID = ABPGetApplicationSigningIdentifier()
-			let revisedBundleId = components.joined(separator: ".")
-			return "\(teamID).\(revisedBundleId).\(AdblockPlusSafariExtension)"
+			return "\(teamID).me.sunsol.AdBlockPlus"
 		}
 	}
 

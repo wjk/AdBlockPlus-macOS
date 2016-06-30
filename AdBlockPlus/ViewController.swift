@@ -74,6 +74,7 @@ class ViewController: NSViewController {
 			let viewController: NSViewController?
 			switch viewId {
 			case .Welcome: viewController = (storyboard.instantiateController(withIdentifier: "ABPWelcomePane") as! NSViewController)
+			case .Exceptions: viewController = (storyboard.instantiateController(withIdentifier: "ABPWhitelistPane") as! NSViewController)
 			default: viewController = nil
 			}
 

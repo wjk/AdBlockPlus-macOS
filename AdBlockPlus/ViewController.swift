@@ -31,6 +31,8 @@ class WindowController: NSWindowController {
 
 	override func windowDidLoad() {
 		super.windowDidLoad()
+		window?.title = localize("AdBlockPlus Settings", "Localizable")
+		window?.titleVisibility = .hidden
 
 		NotificationCenter.default().addObserver(name: ABPDisplayErrorNotification, sender: nil, owner: self) {
 			[weak self] note in
@@ -56,15 +58,6 @@ class ViewController: NSViewController {
 		NotificationCenter.default().addObserver(name: ABPMainViewChangedNotification, sender: nil, owner: self) {
 			note in
 			// ...
-		}
-	}
-	
-	override func viewDidAppear() {
-		super.viewDidAppear()
-
-		if let window = view.window {
-			window.title = localize("AdBlockPlus Settings", "Localizable")
-			window.titleVisibility = .hidden
 		}
 	}
 	

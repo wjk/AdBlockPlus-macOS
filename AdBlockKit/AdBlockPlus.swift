@@ -28,7 +28,7 @@ private let ABPWhitelistedWebsitesDefaultsKey = "AdblockPlusWhitelistedWebsites"
 
 private let AdblockPlusSafariExtension = "AdblockPlusSafariExtension"
 
-public class AdBlockPlus {
+public class AdBlockPlus: NSObject {
 	private static var group: String {
 		get {
 			guard let bundleId = Bundle.main().bundleIdentifier else {
@@ -48,7 +48,7 @@ public class AdBlockPlus {
 		}
 	}
 
-	public init() {
+	public override init() {
 		guard let path = Bundle.main().urlForResource("FilterLists", withExtension: "plist") else {
 			fatalError("FilterLists.plist not found")
 		}

@@ -61,17 +61,34 @@ class ExceptionsListController: NSViewController, NSTableViewDataSource, NSTable
 		model?.acceptableAdsEnabled = (acceptableAdsCheckbox.state == NSOnState)
 	}
 
+	private var _addingWhitelistedWebsite = false
 	@objc @IBAction private func addWhitelistedWebsite(sender: AnyObject?) {
-		// TODO: implement
-		NSBeep()
+		_addingWhitelistedWebsite = true
+		whitelistTableView.reloadData()
 	}
 
 	@objc @IBAction private func removeWhitelistedWebsite(sender: AnyObject?) {
-		// TODO: implement
-		NSBeep()
+		guard let sender = sender as? NSButton else { return }
+		let index = sender.tag
+		model?.whitelistedWebsites.remove(at: index)
+		whitelistTableView.reloadData()
 	}
 
-	// MARK: NSTableViewDataSource
+	private func confirmAddWhitelistedWebsite(sender: AddTextualEntryTableCellView) {
+		if let text = sender.textField?.stringValue {
+			model?.whitelistedWebsites.append(text)
+		}
+
+		_addingWhitelistedWebsite = false
+		whitelistTableView.reloadData()
+	}
+
+	private func cancelAddWhitelistedWebsite(sender: AddTextualEntryTableCellView) {
+		_addingWhitelistedWebsite = false
+		whitelistTableView.reloadData()
+	}
+
+	// MARK: NSTableViewDataSource / NSTableViewDelegate
 
 	func numberOfRows(in tableView: NSTableView) -> Int {
 		let whitelistCount = model?.whitelistedWebsites.count ?? 0
@@ -85,6 +102,22 @@ class ExceptionsListController: NSViewController, NSTableViewDataSource, NSTable
 		switch tableColumn.identifier {
 		case "ABPNameColumn":
 			if row >= model.whitelistedWebsites.count {
+				if _addingWhitelistedWebsite {
+					let cell = tableView.make(withIdentifier: "ABPEnterWebsiteCell", owner: self) as! AddTextualEntryTableCellView
+					cell.textField?.stringValue = ""
+					cell.cancelAction = {
+						[weak self] sender in
+						self?.cancelAddWhitelistedWebsite(sender: sender)
+					}
+					cell.confirmAction = {
+						[weak self] sender in
+						self?.confirmAddWhitelistedWebsite(sender: sender)
+					}
+
+					view.window?.perform(#selector(NSWindow.makeFirstResponder(_:)), with: cell.textField, afterDelay: 0.0)
+					return cell
+				}
+
 				let cell = tableView.make(withIdentifier: "ABPAddWebsiteCell", owner: self) as! ButtonTableCellView
 				cell.button.target = self
 				cell.button.action = #selector(addWhitelistedWebsite(sender:))
@@ -111,5 +144,9 @@ class ExceptionsListController: NSViewController, NSTableViewDataSource, NSTable
 			NSLog("Unexpected NSTableColumn identifier '\(tableColumn.identifier)'")
 			return nil
 		}
+	}
+
+	func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+		return false
 	}
 }

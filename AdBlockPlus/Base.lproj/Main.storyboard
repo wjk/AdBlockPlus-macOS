@@ -377,8 +377,31 @@
                                                                 <outlet property="textField" destination="IsG-n7-MGT" id="J2n-fo-vXV"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <tableCellView identifier="ABPAddWebsiteCell" id="hdp-vF-AtE" customClass="ButtonTableCellView" customModule="AdBlockPlus" customModuleProvider="target">
+                                                        <tableCellView identifier="ABPEnterWebsiteCell" id="5hW-qn-pBr" customClass="AddTextualEntryTableCellView" customModule="AdBlockPlus" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="25" width="498" height="22"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3tX-mD-Bfq">
+                                                                    <rect key="frame" x="3" y="0.0" width="492" height="22"/>
+                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Type URL here, then press Return to confirm or Escape to cancel" drawsBackground="YES" id="88g-iQ-MYJ">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="3tX-mD-Bfq" firstAttribute="leading" secondItem="5hW-qn-pBr" secondAttribute="leading" constant="3" id="3GF-hz-Z0V"/>
+                                                                <constraint firstAttribute="bottom" secondItem="3tX-mD-Bfq" secondAttribute="bottom" id="SDB-yI-YCY"/>
+                                                                <constraint firstAttribute="trailing" secondItem="3tX-mD-Bfq" secondAttribute="trailing" constant="3" id="WZt-f5-qOr"/>
+                                                                <constraint firstItem="3tX-mD-Bfq" firstAttribute="top" secondItem="5hW-qn-pBr" secondAttribute="top" id="diN-c9-jhj"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="textField" destination="3tX-mD-Bfq" id="r6o-eQ-HEG"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                        <tableCellView identifier="ABPAddWebsiteCell" id="hdp-vF-AtE" customClass="ButtonTableCellView" customModule="AdBlockPlus" customModuleProvider="target">
+                                                            <rect key="frame" x="1" y="49" width="498" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="khc-fm-Pup">

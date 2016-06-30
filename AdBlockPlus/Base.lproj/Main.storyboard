@@ -377,7 +377,7 @@
                                                                 <outlet property="textField" destination="IsG-n7-MGT" id="J2n-fo-vXV"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <tableCellView identifier="ABPAddWebsiteCell" id="hdp-vF-AtE">
+                                                        <tableCellView identifier="ABPAddWebsiteCell" id="hdp-vF-AtE" customClass="ButtonTableCellView" customModule="AdBlockPlus" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="25" width="498" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -393,6 +393,9 @@
                                                                 <constraint firstItem="khc-fm-Pup" firstAttribute="centerY" secondItem="hdp-vF-AtE" secondAttribute="centerY" id="S9y-lP-Oq7"/>
                                                                 <constraint firstItem="khc-fm-Pup" firstAttribute="leading" secondItem="hdp-vF-AtE" secondAttribute="leading" constant="3" id="ean-KQ-W2L"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="button" destination="khc-fm-Pup" id="9YU-Id-q7x"/>
+                                                            </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
@@ -409,7 +412,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="ABPRemoveWebsiteCell" id="XeM-XL-vFv">
+                                                        <tableCellView identifier="ABPRemoveWebsiteCell" id="XeM-XL-vFv" customClass="ButtonTableCellView" customModule="AdBlockPlus" customModuleProvider="target">
                                                             <rect key="frame" x="502" y="1" width="74" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -427,6 +430,9 @@
                                                                 <constraint firstItem="5Xd-j8-VO6" firstAttribute="top" secondItem="XeM-XL-vFv" secondAttribute="top" constant="2" id="oCx-2R-EhO"/>
                                                                 <constraint firstAttribute="trailing" secondItem="5Xd-j8-VO6" secondAttribute="trailing" constant="8" id="ty9-85-cqM"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="button" destination="5Xd-j8-VO6" id="zP0-eX-uMT"/>
+                                                            </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>

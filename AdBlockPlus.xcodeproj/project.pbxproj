@@ -90,7 +90,7 @@
 		1F92700B1D2621B800FD41C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1F9D7ED31D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABPGetApplicationSigningIdentifier.m; sourceTree = "<group>"; };
 		1F9D7ED51D2497330096D3A9 /* AdBlockPlusExtras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBlockPlusExtras.swift; sourceTree = "<group>"; };
-		1FCD37251D10A32400A70971 /* AdBlockPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdBlockPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FCD37251D10A32400A70971 /* AdBlock Plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AdBlock Plus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCD37281D10A32400A70971 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FCD372A1D10A32400A70971 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FCD372C1D10A32400A70971 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		1FCD37261D10A32400A70971 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FCD37251D10A32400A70971 /* AdBlockPlus.app */,
+				1FCD37251D10A32400A70971 /* AdBlock Plus.app */,
 				1FE46EED1D2479760061C8CB /* AdBlockKit.framework */,
 				1F6DAE5E1D25AE660079DEB7 /* SafariExtension.appex */,
 			);
@@ -252,9 +252,9 @@
 			productReference = 1F6DAE5E1D25AE660079DEB7 /* SafariExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		1FCD37241D10A32300A70971 /* AdBlockPlus */ = {
+		1FCD37241D10A32300A70971 /* AdBlock Plus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FCD37341D10A32400A70971 /* Build configuration list for PBXNativeTarget "AdBlockPlus" */;
+			buildConfigurationList = 1FCD37341D10A32400A70971 /* Build configuration list for PBXNativeTarget "AdBlock Plus" */;
 			buildPhases = (
 				1FCD37211D10A32300A70971 /* Sources */,
 				1FCD37221D10A32300A70971 /* Frameworks */,
@@ -268,9 +268,9 @@
 				1FE46EF31D2479760061C8CB /* PBXTargetDependency */,
 				1F6DAE6B1D25AE660079DEB7 /* PBXTargetDependency */,
 			);
-			name = AdBlockPlus;
+			name = "AdBlock Plus";
 			productName = AdBlockPlus;
-			productReference = 1FCD37251D10A32400A70971 /* AdBlockPlus.app */;
+			productReference = 1FCD37251D10A32400A70971 /* AdBlock Plus.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1FE46EEC1D2479760061C8CB /* AdBlockKit */ = {
@@ -348,7 +348,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FCD37241D10A32300A70971 /* AdBlockPlus */,
+				1FCD37241D10A32300A70971 /* AdBlock Plus */,
 				1FE46EEC1D2479760061C8CB /* AdBlockKit */,
 				1F6DAE5D1D25AE660079DEB7 /* SafariExtension */,
 			);
@@ -586,6 +586,7 @@
 				INFOPLIST_FILE = AdBlockPlus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.sunsol.AdBlockPlus;
+				PRODUCT_MODULE_NAME = AdBlockPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -602,6 +603,7 @@
 				INFOPLIST_FILE = AdBlockPlus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.sunsol.AdBlockPlus;
+				PRODUCT_MODULE_NAME = AdBlockPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -677,7 +679,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FCD37341D10A32400A70971 /* Build configuration list for PBXNativeTarget "AdBlockPlus" */ = {
+		1FCD37341D10A32400A70971 /* Build configuration list for PBXNativeTarget "AdBlock Plus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FCD37351D10A32400A70971 /* Debug */,

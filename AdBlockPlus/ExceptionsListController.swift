@@ -76,7 +76,24 @@ class ExceptionsListController: NSViewController, NSTableViewDataSource, NSTable
 
 	private func confirmAddWhitelistedWebsite(sender: AddTextualEntryTableCellView) {
 		if let text = sender.textField?.stringValue {
-			model?.whitelistedWebsites.append(text)
+			// Attempt to extract the hostname from the URL, if possible.
+			if let url = URL(string: text), host = url.host {
+				model?.whitelistedWebsites.append(host)
+			} else {
+				let pathElements = text.components(separatedBy: "/")
+
+				var components = URLComponents()
+				components.host = pathElements[0]
+				components.scheme = "http"
+
+				if let url = components.url, host = url.host {
+					model?.whitelistedWebsites.append(host)
+				} else {
+					NSBeep()
+				}
+			}
+		} else {
+			NSBeep()
 		}
 
 		_addingWhitelistedWebsite = false

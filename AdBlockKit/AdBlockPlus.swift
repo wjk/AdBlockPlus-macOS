@@ -89,7 +89,7 @@ public class AdBlockPlus: NSObject {
 
 	public var contentBlockerIdentifier: String {
 		get {
-			fatalError()
+			return "me.sunsol.AdBlockPlus.SafariExtension"
 		}
 	}
 

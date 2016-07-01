@@ -11,6 +11,11 @@
 		1F40592F1D2593C200BD4B5E /* ExceptionsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F40592E1D2593C200BD4B5E /* ExceptionsListController.swift */; };
 		1F4B83851D10A774005D0431 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F4B83871D10A774005D0431 /* Localizable.strings */; };
 		1F6DAE591D259F580079DEB7 /* UtilityViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6DAE581D259F580079DEB7 /* UtilityViews.swift */; };
+		1F6DAE611D25AE660079DEB7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6DAE601D25AE660079DEB7 /* Cocoa.framework */; };
+		1F6DAE681D25AE660079DEB7 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6DAE671D25AE660079DEB7 /* ContentBlockerRequestHandler.swift */; };
+		1F6DAE6C1D25AE660079DEB7 /* SafariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1F6DAE5E1D25AE660079DEB7 /* SafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1F6DAE721D25AEB70079DEB7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F6DAE711D25AEB70079DEB7 /* InfoPlist.strings */; };
+		1F6DAE731D25AEEE0079DEB7 /* AdBlockKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE46EED1D2479760061C8CB /* AdBlockKit.framework */; };
 		1F9D7ED41D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D7ED31D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m */; };
 		1F9D7ED61D2497330096D3A9 /* AdBlockPlusExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D7ED51D2497330096D3A9 /* AdBlockPlusExtras.swift */; };
 		1FCD37291D10A32400A70971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCD37281D10A32400A70971 /* AppDelegate.swift */; };
@@ -25,6 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1F6DAE6A1D25AE660079DEB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FCD371D1D10A32300A70971 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F6DAE5D1D25AE660079DEB7;
+			remoteInfo = SafariExtension;
+		};
 		1FE46EF21D2479760061C8CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1FCD371D1D10A32300A70971 /* Project object */;
@@ -35,6 +47,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1F6DAE701D25AE660079DEB7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1F6DAE6C1D25AE660079DEB7 /* SafariExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FE46EF91D2479770061C8CB /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,6 +76,12 @@
 		1F40592E1D2593C200BD4B5E /* ExceptionsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExceptionsListController.swift; sourceTree = "<group>"; };
 		1F4B83861D10A774005D0431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F6DAE581D259F580079DEB7 /* UtilityViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityViews.swift; sourceTree = "<group>"; };
+		1F6DAE5E1D25AE660079DEB7 /* SafariExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SafariExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F6DAE601D25AE660079DEB7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1F6DAE661D25AE660079DEB7 /* SafariExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SafariExtension.entitlements; sourceTree = "<group>"; };
+		1F6DAE671D25AE660079DEB7 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
+		1F6DAE691D25AE660079DEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F6DAE711D25AEB70079DEB7 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		1F9D7ED31D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABPGetApplicationSigningIdentifier.m; sourceTree = "<group>"; };
 		1F9D7ED51D2497330096D3A9 /* AdBlockPlusExtras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBlockPlusExtras.swift; sourceTree = "<group>"; };
 		1FCD37251D10A32400A70971 /* AdBlockPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdBlockPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +99,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1F6DAE5B1D25AE660079DEB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6DAE731D25AEEE0079DEB7 /* AdBlockKit.framework in Frameworks */,
+				1F6DAE611D25AE660079DEB7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FCD37221D10A32300A70971 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,11 +126,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F6DAE5F1D25AE660079DEB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F6DAE601D25AE660079DEB7 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F6DAE621D25AE660079DEB7 /* SafariExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1F6DAE671D25AE660079DEB7 /* ContentBlockerRequestHandler.swift */,
+				1F6DAE651D25AE660079DEB7 /* Supporting Files */,
+			);
+			path = SafariExtension;
+			sourceTree = "<group>";
+		};
+		1F6DAE651D25AE660079DEB7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F6DAE691D25AE660079DEB7 /* Info.plist */,
+				1F6DAE661D25AE660079DEB7 /* SafariExtension.entitlements */,
+				1F6DAE711D25AEB70079DEB7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		1FCD371C1D10A32300A70971 = {
 			isa = PBXGroup;
 			children = (
 				1FCD37271D10A32400A70971 /* AdBlockPlus */,
 				1FE46EEE1D2479760061C8CB /* AdBlockKit */,
+				1F6DAE621D25AE660079DEB7 /* SafariExtension */,
+				1F6DAE5F1D25AE660079DEB7 /* Frameworks */,
 				1FCD37261D10A32400A70971 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,6 +169,7 @@
 			children = (
 				1FCD37251D10A32400A70971 /* AdBlockPlus.app */,
 				1FE46EED1D2479760061C8CB /* AdBlockKit.framework */,
+				1F6DAE5E1D25AE660079DEB7 /* SafariExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,6 +226,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1F6DAE5D1D25AE660079DEB7 /* SafariExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F6DAE6D1D25AE660079DEB7 /* Build configuration list for PBXNativeTarget "SafariExtension" */;
+			buildPhases = (
+				1F6DAE5A1D25AE660079DEB7 /* Sources */,
+				1F6DAE5B1D25AE660079DEB7 /* Frameworks */,
+				1F6DAE5C1D25AE660079DEB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SafariExtension;
+			productName = SafariExtension;
+			productReference = 1F6DAE5E1D25AE660079DEB7 /* SafariExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		1FCD37241D10A32300A70971 /* AdBlockPlus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FCD37341D10A32400A70971 /* Build configuration list for PBXNativeTarget "AdBlockPlus" */;
@@ -166,11 +251,13 @@
 				1FCD37221D10A32300A70971 /* Frameworks */,
 				1FCD37231D10A32300A70971 /* Resources */,
 				1FE46EF91D2479770061C8CB /* Embed Frameworks */,
+				1F6DAE701D25AE660079DEB7 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				1FE46EF31D2479760061C8CB /* PBXTargetDependency */,
+				1F6DAE6B1D25AE660079DEB7 /* PBXTargetDependency */,
 			);
 			name = AdBlockPlus;
 			productName = AdBlockPlus;
@@ -205,6 +292,17 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "William Kent";
 				TargetAttributes = {
+					1F6DAE5D1D25AE660079DEB7 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3P242C9ES5;
+						DevelopmentTeamName = "William Kent";
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+						};
+					};
 					1FCD37241D10A32300A70971 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3P242C9ES5;
@@ -243,11 +341,20 @@
 			targets = (
 				1FCD37241D10A32300A70971 /* AdBlockPlus */,
 				1FE46EEC1D2479760061C8CB /* AdBlockKit */,
+				1F6DAE5D1D25AE660079DEB7 /* SafariExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1F6DAE5C1D25AE660079DEB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6DAE721D25AEB70079DEB7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FCD37231D10A32300A70971 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,6 +376,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1F6DAE5A1D25AE660079DEB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6DAE681D25AE660079DEB7 /* ContentBlockerRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FCD37211D10A32300A70971 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +409,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1F6DAE6B1D25AE660079DEB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F6DAE5D1D25AE660079DEB7 /* SafariExtension */;
+			targetProxy = 1F6DAE6A1D25AE660079DEB7 /* PBXContainerItemProxy */;
+		};
 		1FE46EF31D2479760061C8CB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1FE46EEC1D2479760061C8CB /* AdBlockKit */;
@@ -321,6 +441,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1F6DAE6E1D25AE660079DEB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				INFOPLIST_FILE = SafariExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.sunsol.AdBlockPlus.SafariExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1F6DAE6F1D25AE660079DEB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				INFOPLIST_FILE = SafariExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.sunsol.AdBlockPlus.SafariExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		1FCD37321D10A32400A70971 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -489,6 +637,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1F6DAE6D1D25AE660079DEB7 /* Build configuration list for PBXNativeTarget "SafariExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F6DAE6E1D25AE660079DEB7 /* Debug */,
+				1F6DAE6F1D25AE660079DEB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		1FCD37201D10A32300A70971 /* Build configuration list for PBXProject "AdBlockPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

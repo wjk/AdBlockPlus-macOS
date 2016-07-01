@@ -19,7 +19,7 @@ import Foundation
 import AdBlockKit
 
 extension AdBlockPlus {
-	static func mergeFilterLists(from input: URL, withWhitelist whitelist: [String], to output: URL) throws {
+	private static func mergeFilterLists(from input: URL, withWhitelist whitelist: [String], to output: URL) throws {
 		let inputData = try Data(contentsOf: input)
 		var array: [AnyObject] = try JSONSerialization.jsonObject(with: inputData) as! [AnyObject]
 

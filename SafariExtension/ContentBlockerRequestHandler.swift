@@ -21,6 +21,7 @@ import AdBlockKit
 @objc(ABPContentBlockerRequestHandler)
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
     func beginRequest(with context: NSExtensionContext) {
+		ABPLog(ABPLogFileURL, ABPLogLevel.info, "Inside \(#function)")
 		let abp = AdBlockPlus()
 		abp.activated = true
 

@@ -18,6 +18,14 @@
 import Foundation
 import AdBlockKit
 
+private func _createLogFileURL() -> URL {
+	let libraryURL = try! FileManager.default().urlForDirectory(.libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+	return try! libraryURL.appendingPathComponents(["Logs", "AdBlockPlusSafariExtension.log"])
+}
+internal let ABPLogFileURL = _createLogFileURL()
+
+// MARK:
+
 private extension URL {
 	func appendingPathComponents(_ components: [String]) throws -> URL {
 		var retval = self
@@ -90,6 +98,7 @@ extension AdBlockPlus {
 	var activeFilterListURLWithWhitelistedWebsites: URL {
 		get {
 			let original = activeFilterListURL
+			NSLog("ABPEXT: \(#function): activeFilterListURL = \(activeFilterListURL)")
 			if let filename = original.lastPathComponent {
 				if filename == "empty.json" {
 					return original
@@ -104,13 +113,15 @@ extension AdBlockPlus {
 
 				do {
 					try AdBlockPlus.mergeFilterLists(from: original, withWhitelist: whitelistedWebsites, to: copy)
+					ABPLog(ABPLogFileURL, .info, "\(#function): Returning copy URL '\(copy)")
 					return copy
 				} catch {
+					ABPLog(ABPLogFileURL, .info, "\(#function): Returning original URL '\(copy)")
 					return original
 				}
 			}
 
-			NSLog("\(#function): Could not add whitelisted websites to filter list URL '\(original)'")
+			ABPLog(ABPLogFileURL, ABPLogLevel.warning, "\(#function): Could not add whitelisted websites to filter list URL '\(original)'")
 			return original
 		}
 	}

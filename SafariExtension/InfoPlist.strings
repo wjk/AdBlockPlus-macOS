@@ -15,5 +15,6 @@
 // along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
 //
 
+"CFBundleName" = "AdBlock Plus";
 "CFBundleDisplayName" = "AdBlock Plus";
 "NSHumanReadableDescription" = "Block annoying ads, malware, and tracking bugs from webpages in Safari.";

@@ -153,9 +153,11 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 				// Force the content blocker to reload the newer version of the filter lists
 				reloadContentBlocker(completion: {
 					(error) in
-					var note = Notification(name: ABPDisplayErrorNotification)
-					note.userInfo = [ "error": error ]
-					note.post()
+					if let error = error {
+						var note = Notification(name: ABPDisplayErrorNotification)
+						note.userInfo = [ "error": error ]
+						note.post()
+					}
 				})
 			}
 
@@ -170,9 +172,11 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 		didSet {
 			reloadContentBlocker(completion: {
 				(error) in
-				var note = Notification(name: ABPDisplayErrorNotification)
-				note.userInfo = [ "error": error ]
-				note.post()
+				if let error = error {
+					var note = Notification(name: ABPDisplayErrorNotification)
+					note.userInfo = [ "error": error ]
+					note.post()
+				}
 			})
 		}
 	}

@@ -29,7 +29,7 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.Safari.content-blocker</string>
 		<key>NSExtensionPrincipalClass</key>
-		<string>$(PRODUCT_MODULE_NAME).ContentBlockerRequestHandler</string>
+		<string>ABPContentBlockerRequestHandler</string>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016 William Kent. All rights reserved.</string>

@@ -18,6 +18,7 @@
 import Foundation
 import AdBlockKit
 
+@objc(ABPContentBlockerRequestHandler)
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
     func beginRequest(with context: NSExtensionContext) {
 		let abp = AdBlockPlus()

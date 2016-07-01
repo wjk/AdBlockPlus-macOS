@@ -4,11 +4,11 @@
 <dict>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
-	<key>com.apple.security.network.client</key>
-	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>3P242C9ES5.me.sunsol.AdBlockPlus</string>
+		<string>$(TeamIdentifierPrefix)me.sunsol.AdBlockPlus</string>
 	</array>
+	<key>com.apple.security.network.client</key>
+	<true/>
 </dict>
 </plist>

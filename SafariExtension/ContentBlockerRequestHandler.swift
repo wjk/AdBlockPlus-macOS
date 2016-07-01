@@ -16,14 +16,27 @@
 //
 
 import Foundation
+import AdBlockKit
 
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
     func beginRequest(with context: NSExtensionContext) {
-        let attachment = NSItemProvider(contentsOf: Bundle.main().urlForResource("blockerList", withExtension: "json"))!
-        
-        let item = NSExtensionItem()
-        item.attachments = [attachment]
-        
-        context.completeRequest(returningItems: [item], completionHandler: nil);
+		let abp = AdBlockPlus()
+		abp.activated = true
+
+		let downloadedVersion = abp.downloadedVersion
+		let url = abp.activeFilterListURLWithWhitelistedWebsites
+
+		guard let attachment = NSItemProvider(contentsOf: url) else {
+			fatalError("Could not create NSItemProvider for URL '\(url)'")
+		}
+
+		let extensionItem = NSExtensionItem()
+		extensionItem.attachments = [attachment]
+		context.completeRequest(returningItems: [extensionItem]) {
+			(expired) in
+			if !expired {
+				abp.installedVersion = max(abp.installedVersion, downloadedVersion)
+			}
+		}
     }
 }

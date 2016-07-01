@@ -382,19 +382,32 @@
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3tX-mD-Bfq">
-                                                                    <rect key="frame" x="3" y="0.0" width="492" height="22"/>
-                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Type a website name here, then press Return to confirm or Escape to cancel" drawsBackground="YES" id="88g-iQ-MYJ">
+                                                                    <rect key="frame" x="3" y="0.0" width="470" height="22"/>
+                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Type a website name here, then press Return to confirm" drawsBackground="YES" id="88g-iQ-MYJ">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
+                                                                <button toolTip="Cancel adding website" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZFI-FS-Uwz">
+                                                                    <rect key="frame" x="481" y="0.0" width="14" height="22"/>
+                                                                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSStopProgressFreestandingTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="rx6-xA-2Uh">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="cancelOperation:" target="5hW-qn-pBr" id="F8F-lI-rhp"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="3tX-mD-Bfq" firstAttribute="leading" secondItem="5hW-qn-pBr" secondAttribute="leading" constant="3" id="3GF-hz-Z0V"/>
+                                                                <constraint firstItem="ZFI-FS-Uwz" firstAttribute="leading" secondItem="3tX-mD-Bfq" secondAttribute="trailing" constant="8" id="Bpw-J0-fNX"/>
                                                                 <constraint firstAttribute="bottom" secondItem="3tX-mD-Bfq" secondAttribute="bottom" id="SDB-yI-YCY"/>
-                                                                <constraint firstAttribute="trailing" secondItem="3tX-mD-Bfq" secondAttribute="trailing" constant="3" id="WZt-f5-qOr"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ZFI-FS-Uwz" secondAttribute="trailing" constant="3" id="XR2-oD-fxz"/>
                                                                 <constraint firstItem="3tX-mD-Bfq" firstAttribute="top" secondItem="5hW-qn-pBr" secondAttribute="top" id="diN-c9-jhj"/>
+                                                                <constraint firstAttribute="bottom" secondItem="ZFI-FS-Uwz" secondAttribute="bottom" id="dyJ-dg-oES"/>
+                                                                <constraint firstItem="ZFI-FS-Uwz" firstAttribute="top" secondItem="5hW-qn-pBr" secondAttribute="top" id="ffq-HA-5RR"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="3tX-mD-Bfq" id="r6o-eQ-HEG"/>
@@ -506,4 +519,7 @@
             <point key="canvasLocation" x="609" y="1230"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSStopProgressFreestandingTemplate" width="14" height="14"/>
+    </resources>
 </document>

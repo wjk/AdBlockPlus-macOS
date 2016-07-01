@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F0981431D26174D00116A03 /* AdBlockPlus+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0981421D26174D00116A03 /* AdBlockPlus+Parsing.swift */; };
+		1F0981461D2618FF00116A03 /* Filter Lists in Resources */ = {isa = PBXBuildFile; fileRef = 1F0981451D2618FF00116A03 /* Filter Lists */; };
 		1F40592B1D25936B00BD4B5E /* FilterLists.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F40592A1D25936B00BD4B5E /* FilterLists.plist */; };
 		1F40592F1D2593C200BD4B5E /* ExceptionsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F40592E1D2593C200BD4B5E /* ExceptionsListController.swift */; };
 		1F4B83851D10A774005D0431 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F4B83871D10A774005D0431 /* Localizable.strings */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		1F0981421D26174D00116A03 /* AdBlockPlus+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AdBlockPlus+Parsing.swift"; sourceTree = "<group>"; };
+		1F0981451D2618FF00116A03 /* Filter Lists */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Filter Lists"; sourceTree = "<group>"; };
 		1F40592A1D25936B00BD4B5E /* FilterLists.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterLists.plist; sourceTree = "<group>"; };
 		1F40592E1D2593C200BD4B5E /* ExceptionsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExceptionsListController.swift; sourceTree = "<group>"; };
 		1F4B83861D10A774005D0431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				1F6DAE671D25AE660079DEB7 /* ContentBlockerRequestHandler.swift */,
 				1F0981421D26174D00116A03 /* AdBlockPlus+Parsing.swift */,
+				1F0981451D2618FF00116A03 /* Filter Lists */,
 				1F6DAE651D25AE660079DEB7 /* Supporting Files */,
 			);
 			path = SafariExtension;
@@ -355,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F6DAE721D25AEB70079DEB7 /* InfoPlist.strings in Resources */,
+				1F0981461D2618FF00116A03 /* Filter Lists in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

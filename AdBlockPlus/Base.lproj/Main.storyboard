@@ -383,7 +383,7 @@
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3tX-mD-Bfq">
                                                                     <rect key="frame" x="3" y="0.0" width="492" height="22"/>
-                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Type URL here, then press Return to confirm or Escape to cancel" drawsBackground="YES" id="88g-iQ-MYJ">
+                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Type a website name here, then press Return to confirm or Escape to cancel" drawsBackground="YES" id="88g-iQ-MYJ">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

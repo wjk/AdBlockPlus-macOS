@@ -151,7 +151,12 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 
 			if installedVersion < downloadedVersion && wasUpdating && !updating {
 				// Force the content blocker to reload the newer version of the filter lists
-				reloadContentBlocker(completion: nil)
+				reloadContentBlocker(completion: {
+					(error) in
+					var note = Notification(name: ABPDisplayErrorNotification)
+					note.userInfo = [ "error": error ]
+					note.post()
+				})
 			}
 
 			if hasAnyLastUpdateFailed != anyLastUpdateFailed {
@@ -163,7 +168,12 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 
 	override var whitelistedWebsites: [String] {
 		didSet {
-			reloadContentBlocker(completion: nil)
+			reloadContentBlocker(completion: {
+				(error) in
+				var note = Notification(name: ABPDisplayErrorNotification)
+				note.userInfo = [ "error": error ]
+				note.post()
+			})
 		}
 	}
 

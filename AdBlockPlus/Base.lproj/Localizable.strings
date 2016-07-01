@@ -20,3 +20,9 @@
 // NSError strings.
 "Failed to update filter lists." = "Failed to update filter lists.";
 "Please try again later." = "Please try again later.";
+
+"Could not update the Safari extension because it has not been registered." = "Could not update the Safari extension because it has not been registered.";
+"Could not update the Safari extension because it could not find its rules file." = "Could not update the Safari extension because it could not find its rules file.";
+"An error occurred while loading the Safari extension." = "An error occurred while loading the Safari extension.";
+
+"Please try again later." = "Please try again later.";

@@ -16,11 +16,32 @@
 //
 
 import Cocoa
+import SafariServices
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(_ notification: Notification) {
-		// Insert code here to initialize your application
+		NSError.setUserInfoValueProvider(forDomain: SFContentBlockerErrorDomain) {
+			(error, userInfoKey) -> AnyObject? in
+			assert(error.domain == SFContentBlockerErrorDomain, "Unexpected error domain in user info callback")
+			switch userInfoKey {
+			case NSLocalizedDescriptionKey:
+				switch error.code {
+				case SFContentBlockerErrorCode.noExtensionFound.rawValue:
+					return localize("Could not update the Safari extension because it has not been registered.", "Localizable")
+				case SFContentBlockerErrorCode.noAttachmentFound.rawValue:
+					return localize("Could not update the Safari extension because it could not find its rules file.", "Localizable")
+				case SFContentBlockerErrorCode.loadingInterrupted.rawValue:
+					return localize("An error occurred while loading the Safari extension.", "Localizable")
+				default:
+					return nil
+				}
+			case NSLocalizedRecoverySuggestionErrorKey:
+				return localize("Please try again later.", "Localizable")
+			default:
+				return nil
+			}
+		}
 	}
 	
 	func applicationWillTerminate(_ notification: Notification) {

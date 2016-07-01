@@ -18,6 +18,16 @@
 import Foundation
 import AdBlockKit
 
+private extension URL {
+	func appendingPathComponents(_ components: [String]) throws -> URL {
+		var retval = self
+		for elem in components {
+			retval = try retval.appendingPathComponent(elem)
+		}
+		return retval
+	}
+}
+
 extension AdBlockPlus {
 	private static func mergeFilterLists(from input: URL, withWhitelist whitelist: [String], to output: URL) throws {
 		let inputData = try Data(contentsOf: input)
@@ -33,5 +43,75 @@ extension AdBlockPlus {
 
 		let outputData = try JSONSerialization.data(withJSONObject: array)
 		try outputData.write(to: output)
+	}
+
+	var activeFilterListURL: URL {
+		get {
+			let fileManager = FileManager()
+			let filename: String
+
+			if !enabled {
+				filename = "empty"
+			} else if acceptableAdsEnabled {
+				filename = "easylist+exceptionrules_content_blocker"
+			} else {
+				filename = "easylist_content_blocker"
+			}
+
+			for (_, filterList) in filterLists {
+				if let filterListFilename = filterList["filename"] as? String where filename == filterListFilename {
+					if let downloaded = filterList["downloaded"] as? Bool where !downloaded {
+						break
+					}
+
+					guard var url = fileManager.containerURLForSecurityApplicationGroupIdentifier(AdBlockPlus.applicationGroup) else {
+						fatalError("Could not resolve application group identifier to container URL")
+					}
+					url = try! url.appendingPathComponents(["Library", "AdBlockPlus Filter Lists", filename])
+					url = try! url.appendingPathExtension("json")
+
+					assert(url.isFileURL, "Filter list URL '\(url)' points to a non-local resource, this is not supported")
+					do {
+						let reachable = try url.checkResourceIsReachable()
+						if !reachable { break }
+					} catch {
+						break
+					}
+				}
+			}
+
+			guard let url = Bundle(for: ContentBlockerRequestHandler.self).urlForResource(filename, withExtension: "json", subdirectory: "Filter Lists") else {
+				fatalError("Fallback filter list '\(filename).json' not found")
+			}
+			return url
+		}
+	}
+
+	var activeFilterListURLWithWhitelistedWebsites: URL {
+		get {
+			let original = activeFilterListURL
+			if let filename = original.lastPathComponent {
+				if filename == "empty.json" {
+					return original
+				}
+
+				let fileManager = FileManager()
+				guard var copy = fileManager.containerURLForSecurityApplicationGroupIdentifier(AdBlockPlus.applicationGroup) else {
+					fatalError("Could not resolve application group identifier to container URL")
+				}
+				copy = try! copy.appendingPathComponents(["Library", "AdBlockPlus Filter Lists"])
+				copy = try! copy.appendingPathComponent("ww-\(filename)")
+
+				do {
+					try AdBlockPlus.mergeFilterLists(from: original, withWhitelist: whitelistedWebsites, to: copy)
+					return copy
+				} catch {
+					return original
+				}
+			}
+
+			NSLog("\(#function): Could not add whitelisted websites to filter list URL '\(original)'")
+			return original
+		}
 	}
 }

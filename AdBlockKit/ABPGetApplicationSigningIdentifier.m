@@ -34,7 +34,6 @@ NSString *ABPGetApplicationSigningIdentifier(void) {
 		NSCAssert(codeAttributes != NULL, @"SecCodeCopySigningInformation returned success, but gave NULL attributes dictionary");
 
 		CFStringRef teamIDCF = CFDictionaryGetValue(codeAttributes, kSecCodeInfoTeamIdentifier);
-		NSCAssert(teamIDCF != NULL, @"Could not retrieve Team Identifier");
 		teamID = (__bridge NSString *)teamIDCF;
 	});
 

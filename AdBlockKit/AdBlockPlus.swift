@@ -31,7 +31,7 @@ private let AdblockPlusSafariExtension = "AdblockPlusSafariExtension"
 public class AdBlockPlus: NSObject {
 	public static var applicationGroup: String {
 		get {
-			let teamID = ABPGetApplicationSigningIdentifier()
+			let teamID = ABPGetApplicationSigningIdentifier() ?? "group"
 			return "\(teamID).me.sunsol.AdBlockPlus"
 		}
 	}

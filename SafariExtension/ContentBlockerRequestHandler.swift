@@ -21,7 +21,6 @@ import AdBlockKit
 @objc(ABPContentBlockerRequestHandler)
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
     func beginRequest(with context: NSExtensionContext) {
-		NSLog("AdBlockPlusSafariExtension: Entry")
 		do {
 			guard let libraryURL = FileManager.default().containerURLForSecurityApplicationGroupIdentifier(AdBlockPlus.applicationGroup) else {
 				throw NSError()
@@ -37,7 +36,6 @@ class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 
 		let downloadedVersion = abp.downloadedVersion
 		let url = abp.activeFilterListURLWithWhitelistedWebsites
-		NSLog("AdBlockPlusSafariExtension: Using filter list URL '\(url)'")
 
 		guard let attachment = NSItemProvider(contentsOf: url) else {
 			fatalError("Could not create NSItemProvider for URL '\(url)'")

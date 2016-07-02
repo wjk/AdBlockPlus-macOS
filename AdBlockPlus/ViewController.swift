@@ -76,8 +76,8 @@ class ViewController: NSViewController {
 			if let this = self {
 				switch viewId {
 				case .Welcome: this.currentViewController = (storyboard.instantiateController(withIdentifier: "ABPWelcomePane") as! NSViewController)
+				case .FilterLists: this.currentViewController = (storyboard.instantiateController(withIdentifier: "ABPFilterListsPane") as! NSViewController)
 				case .Exceptions: this.currentViewController = (storyboard.instantiateController(withIdentifier: "ABPWhitelistPane") as! NSViewController)
-				default: this.currentViewController = nil
 				}
 
 				this.currentViewController?.representedObject = this.representedObject

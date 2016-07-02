@@ -305,6 +305,45 @@
             </objects>
             <point key="canvasLocation" x="-165" y="1230"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="tJy-Xo-GaW">
+            <objects>
+                <viewController storyboardIdentifier="ABPFilterListsPane" id="VkE-YF-Rqp" sceneMemberID="viewController">
+                    <view key="view" id="b6S-QJ-kYD">
+                        <rect key="frame" x="0.0" y="0.0" width="620" height="340"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="AMS-gy-wmz">
+                                <rect key="frame" x="18" y="269" width="584" height="51"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="xhf-67-mo6">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">AdBlock Plus uses the EasyList filter list to determine what parts of a webpage are advertisements. The EasyList is dual-licensed under the Creative Commons Attribution–ShareAlike license and the GNU General Public License.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ulu-i8-3X0">
+                                <rect key="frame" x="18" y="244" width="411" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="This application does not support third-party filter lists at this time." id="HEW-OT-kNa">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="AMS-gy-wmz" firstAttribute="top" secondItem="b6S-QJ-kYD" secondAttribute="top" constant="20" symbolic="YES" id="0Fh-dn-7sP"/>
+                            <constraint firstItem="AMS-gy-wmz" firstAttribute="leading" secondItem="b6S-QJ-kYD" secondAttribute="leading" constant="20" symbolic="YES" id="NoO-wc-Cl0"/>
+                            <constraint firstItem="ulu-i8-3X0" firstAttribute="top" secondItem="AMS-gy-wmz" secondAttribute="bottom" constant="8" symbolic="YES" id="TXA-bJ-65W"/>
+                            <constraint firstItem="ulu-i8-3X0" firstAttribute="leading" secondItem="b6S-QJ-kYD" secondAttribute="leading" constant="20" symbolic="YES" id="fte-ek-kLD"/>
+                            <constraint firstAttribute="trailing" secondItem="AMS-gy-wmz" secondAttribute="trailing" constant="20" symbolic="YES" id="vPj-1C-tg5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="3at-y1-FwG" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-88" y="1677"/>
+        </scene>
         <!--Exceptions List Controller-->
         <scene sceneID="6tk-eP-voy">
             <objects>

@@ -16,6 +16,8 @@
 //
 
 "AdBlockPlus Settings" = "AdBlockPlus Settings";
+"Enable AdBlock Plus for all websites" = "Enable AdBlock Plus for all websites";
+"Disable AdBlock Plus for all websites" = "Disable AdBlock Plus for all websites";
 
 // NSError strings.
 "Failed to update filter lists." = "Failed to update filter lists.";

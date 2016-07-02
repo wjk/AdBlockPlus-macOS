@@ -239,10 +239,10 @@
             </objects>
             <point key="canvasLocation" x="144" y="777"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome Controller-->
         <scene sceneID="tUy-au-jM3">
             <objects>
-                <viewController storyboardIdentifier="ABPWelcomePane" id="Eh4-Kq-qck" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ABPWelcomePane" id="Eh4-Kq-qck" customClass="WelcomeController" customModule="AdBlockPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="sdF-ZK-lqg">
                         <rect key="frame" x="0.0" y="0.0" width="620" height="340"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -251,14 +251,6 @@
                                 <rect key="frame" x="18" y="303" width="281" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Welcome to AdBlock Plus for macOS Sierra" id="u0o-2V-VeR">
                                     <font key="font" metaFont="systemBold"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="faF-JQ-rGg">
-                                <rect key="frame" x="18" y="278" width="460" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="To enable AdBlock Plus, open the Extensions pane of System Preferences…" id="YB4-Cv-ykT">
-                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -272,17 +264,42 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="YVH-L2-djr">
+                                <rect key="frame" x="20" y="261" width="582" height="34"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="oaS-hn-Gdd">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">To enable AdBlock Plus, open Safari’s Preferences window, click the Extensions tab, and check the box next to “AdBlock Plus”. Then just click the button below.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dEX-5Y-8Ki">
+                                <rect key="frame" x="14" y="225" width="258" height="32"/>
+                                <buttonCell key="cell" type="push" title="Enable AdBlock Plus for all websites" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EDv-MQ-6kP">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="toggleEnabledWithSender:" target="Eh4-Kq-qck" id="zGq-Ap-0nU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="nFb-Fs-IYR" firstAttribute="top" secondItem="sdF-ZK-lqg" secondAttribute="top" constant="20" id="1a5-UF-CQt"/>
-                            <constraint firstItem="faF-JQ-rGg" firstAttribute="leading" secondItem="sdF-ZK-lqg" secondAttribute="leading" constant="20" id="1vg-rp-j7M"/>
+                            <constraint firstItem="YVH-L2-djr" firstAttribute="top" secondItem="nFb-Fs-IYR" secondAttribute="bottom" constant="8" id="3pF-q5-mIc"/>
+                            <constraint firstItem="dEX-5Y-8Ki" firstAttribute="leading" secondItem="sdF-ZK-lqg" secondAttribute="leading" constant="20" id="G01-0g-rwW"/>
                             <constraint firstItem="8DZ-n8-SvW" firstAttribute="leading" secondItem="sdF-ZK-lqg" secondAttribute="leading" constant="20" id="HNa-R1-LsW"/>
-                            <constraint firstItem="faF-JQ-rGg" firstAttribute="top" secondItem="nFb-Fs-IYR" secondAttribute="bottom" constant="8" id="IIc-SJ-0Kk"/>
+                            <constraint firstItem="dEX-5Y-8Ki" firstAttribute="top" secondItem="YVH-L2-djr" secondAttribute="bottom" constant="8" id="Q7L-Yb-rTB"/>
+                            <constraint firstAttribute="trailing" secondItem="YVH-L2-djr" secondAttribute="trailing" constant="20" id="RBH-rh-wKa"/>
                             <constraint firstAttribute="bottom" secondItem="8DZ-n8-SvW" secondAttribute="bottom" constant="20" id="RDU-h0-ogN"/>
                             <constraint firstAttribute="trailing" secondItem="8DZ-n8-SvW" secondAttribute="trailing" constant="20" id="YdK-IV-BFJ"/>
                             <constraint firstItem="nFb-Fs-IYR" firstAttribute="leading" secondItem="sdF-ZK-lqg" secondAttribute="leading" constant="20" id="iPM-yZ-VbS"/>
+                            <constraint firstItem="YVH-L2-djr" firstAttribute="leading" secondItem="sdF-ZK-lqg" secondAttribute="leading" constant="22" id="qXm-4D-oTH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="toggleButton" destination="dEX-5Y-8Ki" id="0Ms-L0-meF"/>
+                    </connections>
                 </viewController>
                 <customObject id="Sjn-AF-vff" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

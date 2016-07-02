@@ -26,6 +26,7 @@
 		1FCD372B1D10A32400A70971 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCD372A1D10A32400A70971 /* ViewController.swift */; };
 		1FCD372D1D10A32400A70971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FCD372C1D10A32400A70971 /* Assets.xcassets */; };
 		1FCD37301D10A32400A70971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FCD372E1D10A32400A70971 /* Main.storyboard */; };
+		1FD0E91E1D2766CD00FFD318 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0E91D1D2766CD00FFD318 /* WelcomeController.swift */; };
 		1FE46EF01D2479760061C8CB /* AdBlockKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FE46EEF1D2479760061C8CB /* AdBlockKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FE46EF41D2479760061C8CB /* AdBlockKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE46EED1D2479760061C8CB /* AdBlockKit.framework */; };
 		1FE46EF51D2479760061C8CB /* AdBlockKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE46EED1D2479760061C8CB /* AdBlockKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -99,6 +100,7 @@
 		1FCD372F1D10A32400A70971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FCD37311D10A32400A70971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FCD37371D10A37A00A70971 /* AdBlockPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AdBlockPlus.entitlements; sourceTree = "<group>"; };
+		1FD0E91D1D2766CD00FFD318 /* WelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		1FE46EED1D2479760061C8CB /* AdBlockKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdBlockKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE46EEF1D2479760061C8CB /* AdBlockKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdBlockKit.h; sourceTree = "<group>"; };
 		1FE46EF11D2479760061C8CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */,
 				1F9D7ED51D2497330096D3A9 /* AdBlockPlusExtras.swift */,
 				1F6DAE581D259F580079DEB7 /* UtilityViews.swift */,
+				1FD0E91D1D2766CD00FFD318 /* WelcomeController.swift */,
 				1F40592E1D2593C200BD4B5E /* ExceptionsListController.swift */,
 				1FCD372E1D10A32400A70971 /* Main.storyboard */,
 				1F4B83871D10A774005D0431 /* Localizable.strings */,
@@ -404,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FFEDF471D2471D800A7E0DA /* NotificationUtilities.swift in Sources */,
+				1FD0E91E1D2766CD00FFD318 /* WelcomeController.swift in Sources */,
 				1F9D7ED61D2497330096D3A9 /* AdBlockPlusExtras.swift in Sources */,
 				1F40592F1D2593C200BD4B5E /* ExceptionsListController.swift in Sources */,
 				1FCD372B1D10A32400A70971 /* ViewController.swift in Sources */,

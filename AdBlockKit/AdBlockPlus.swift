@@ -37,6 +37,12 @@ public class AdBlockPlus: NSObject {
 	}
 
 	public override init() {
+		guard let defaults = UserDefaults(suiteName: AdBlockPlus.applicationGroup) else {
+			fatalError("Could not create NSUserDefaults suite with name '\(AdBlockPlus.applicationGroup)'")
+		}
+		adBlockPlusDetails = defaults
+		super.init()
+
 		guard let path = Bundle(for: AdBlockPlus.self).urlForResource("FilterLists", withExtension: "plist") else {
 			fatalError("FilterLists.plist not found")
 		}
@@ -50,10 +56,6 @@ public class AdBlockPlus: NSObject {
 			filterLists = [:]
 		}
 
-		guard let defaults = UserDefaults(suiteName: AdBlockPlus.applicationGroup) else {
-			fatalError("Could not create NSUserDefaults suite with name '\(AdBlockPlus.applicationGroup)'")
-		}
-		adBlockPlusDetails = defaults
 		adBlockPlusDetails.register([
 			ABPActivatedDefaultsKey: false,
 			ABPEnabledDefaultsKey: true,
@@ -63,12 +65,6 @@ public class AdBlockPlus: NSObject {
 			ABPFilterListsDefaultsKey: filterLists,
 			ABPWhitelistedWebsitesDefaultsKey: []
 			])
-
-		enabled = adBlockPlusDetails.bool(forKey: ABPEnabledDefaultsKey)
-		acceptableAdsEnabled = adBlockPlusDetails.bool(forKey: ABPAcceptableAdsEnabledDefaultsKey)
-		activated = adBlockPlusDetails.bool(forKey: ABPActivatedDefaultsKey)
-		installedVersion = adBlockPlusDetails.integer(forKey: ABPInstalledVersionDefaultsKey)
-		downloadedVersion = adBlockPlusDetails.integer(forKey: ABPDownloadedVersionDefaultsKey)
 
 		guard let filterListsFromDefaults = adBlockPlusDetails.dictionary(forKey: ABPFilterListsDefaultsKey) else {
 			fatalError("ABPFilterListsDefaultsKey not found in UserDefaults database")
@@ -100,44 +96,72 @@ public class AdBlockPlus: NSObject {
 	}
 
 	public var enabled: Bool {
-		didSet {
-			adBlockPlusDetails.set(enabled, forKey: ABPEnabledDefaultsKey)
+		get {
+			return adBlockPlusDetails.bool(forKey: ABPEnabledDefaultsKey)
+		}
+
+		set {
+			adBlockPlusDetails.set(newValue, forKey: ABPEnabledDefaultsKey)
 		}
 	}
 
 	public var acceptableAdsEnabled: Bool {
-		didSet {
-			adBlockPlusDetails.set(acceptableAdsEnabled, forKey: ABPAcceptableAdsEnabledDefaultsKey)
+		get {
+			return adBlockPlusDetails.bool(forKey: ABPAcceptableAdsEnabledDefaultsKey)
+		}
+
+		set {
+			adBlockPlusDetails.set(newValue, forKey: ABPAcceptableAdsEnabledDefaultsKey)
 		}
 	}
 
 	public var activated: Bool {
-		didSet {
-			adBlockPlusDetails.set(activated, forKey: ABPActivatedDefaultsKey)
+		get {
+			return adBlockPlusDetails.bool(forKey: ABPActivatedDefaultsKey)
+		}
+
+		set {
+			adBlockPlusDetails.set(newValue, forKey: ABPActivatedDefaultsKey)
 		}
 	}
 
 	public var installedVersion: Int {
-		didSet {
-			adBlockPlusDetails.set(installedVersion, forKey: ABPInstalledVersionDefaultsKey)
+		get {
+			return adBlockPlusDetails.integer(forKey: ABPInstalledVersionDefaultsKey)
+		}
+
+		set {
+			adBlockPlusDetails.set(newValue, forKey: ABPInstalledVersionDefaultsKey)
 		}
 	}
 
 	public var downloadedVersion: Int {
-		didSet {
-			adBlockPlusDetails.set(downloadedVersion, forKey: ABPDownloadedVersionDefaultsKey)
+		get {
+			return adBlockPlusDetails.integer(forKey: ABPDownloadedVersionDefaultsKey)
+		}
+
+		set {
+			adBlockPlusDetails.set(newValue, forKey: ABPDownloadedVersionDefaultsKey)
 		}
 	}
 
 	public var filterLists: [String: [String: AnyObject]] {
-		didSet {
-			adBlockPlusDetails.set(filterLists, forKey: ABPFilterListsDefaultsKey)
+		get {
+			return adBlockPlusDetails.object(forKey: ABPFilterListsDefaultsKey) as! [String: [String: AnyObject]]
+		}
+
+		set {
+			adBlockPlusDetails.set(newValue, forKey: ABPFilterListsDefaultsKey)
 		}
 	}
 
 	public var whitelistedWebsites: [String] {
-		didSet {
-			adBlockPlusDetails.set(whitelistedWebsites, forKey: ABPWhitelistedWebsitesDefaultsKey)
+		get {
+			return adBlockPlusDetails.object(forKey: ABPWhitelistedWebsitesDefaultsKey) as! [String]
+		}
+
+		set {
+			adBlockPlusDetails.set(newValue, forKey: ABPWhitelistedWebsitesDefaultsKey)
 		}
 	}
 }

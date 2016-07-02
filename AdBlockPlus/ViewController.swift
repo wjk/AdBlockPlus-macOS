@@ -89,10 +89,4 @@ class ViewController: NSViewController {
 		currentViewController?.representedObject = representedObject
 		viewBox.contentView = currentViewController!.view
 	}
-	
-	override var representedObject: AnyObject? {
-		didSet {
-			// Update the view, if already loaded.
-		}
-	}
 }

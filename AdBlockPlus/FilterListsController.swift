@@ -34,16 +34,16 @@ class FilterListsController: NSViewController {
 
 	@IBAction private func updateFilterLists(sender: AnyObject?) {
 		if let model = model {
-			progressIndicator.isHidden = false
 			progressIndicator.startAnimation(nil)
 			updateButton.isEnabled = false
 
 			model.updateFilterLists(userTriggered: true) {
 				[weak self] in
 				if let this = self {
-					this.progressIndicator.stopAnimation(nil)
-					this.progressIndicator.isHidden = true
-					this.updateButton.isEnabled = true
+					DispatchQueue.main.async {
+						this.progressIndicator.stopAnimation(nil)
+						this.updateButton.isEnabled = true
+					}
 				}
 			}
 

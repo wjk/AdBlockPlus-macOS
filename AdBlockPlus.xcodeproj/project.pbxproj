@@ -32,6 +32,7 @@
 		1FE46EFB1D247A1D0061C8CB /* AdBlockPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE46EFA1D247A1D0061C8CB /* AdBlockPlus.swift */; };
 		1FE61C751D27714B0096152F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FE61C771D27714B0096152F /* InfoPlist.strings */; };
 		1FF029421D2865C9003DC16B /* FilterListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF029411D2865C9003DC16B /* FilterListsController.swift */; };
+		1FF029441D286A8B003DC16B /* README-Distribution.html in Resources */ = {isa = PBXBuildFile; fileRef = 1FF029431D286A8B003DC16B /* README-Distribution.html */; };
 		1FFEDF471D2471D800A7E0DA /* NotificationUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		1FE46EFA1D247A1D0061C8CB /* AdBlockPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBlockPlus.swift; sourceTree = "<group>"; };
 		1FE61C761D27714B0096152F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1FF029411D2865C9003DC16B /* FilterListsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListsController.swift; sourceTree = "<group>"; };
+		1FF029431D286A8B003DC16B /* README-Distribution.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "README-Distribution.html"; sourceTree = "<group>"; };
 		1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,6 +215,7 @@
 				1FCD37311D10A32400A70971 /* Info.plist */,
 				1F92700C1D2621B800FD41C8 /* InfoPlist.strings */,
 				1FCD37371D10A37A00A70971 /* AdBlockPlus.entitlements */,
+				1FF029431D286A8B003DC16B /* README-Distribution.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FF029441D286A8B003DC16B /* README-Distribution.html in Resources */,
 				1FCD372D1D10A32400A70971 /* Assets.xcassets in Resources */,
 				1F92700A1D2621B800FD41C8 /* InfoPlist.strings in Resources */,
 				1F4B83851D10A774005D0431 /* Localizable.strings in Resources */,

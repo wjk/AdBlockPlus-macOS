@@ -26,7 +26,7 @@ internal let ABPLogFileURL = _createLogFileURL()
 
 // MARK:
 
-private extension URL {
+internal extension URL {
 	func appendingPathComponents(_ components: [String]) throws -> URL {
 		var retval = self
 		for elem in components {
@@ -82,6 +82,7 @@ extension AdBlockPlus {
 					do {
 						let reachable = try url.checkResourceIsReachable()
 						if !reachable { break }
+						return url
 					} catch {
 						break
 					}
@@ -98,7 +99,6 @@ extension AdBlockPlus {
 	var activeFilterListURLWithWhitelistedWebsites: URL {
 		get {
 			let original = activeFilterListURL
-			NSLog("ABPEXT: \(#function): activeFilterListURL = \(activeFilterListURL)")
 			if let filename = original.lastPathComponent {
 				if filename == "empty.json" {
 					return original
@@ -113,15 +113,12 @@ extension AdBlockPlus {
 
 				do {
 					try AdBlockPlus.mergeFilterLists(from: original, withWhitelist: whitelistedWebsites, to: copy)
-					ABPLog(ABPLogFileURL, .info, "\(#function): Returning copy URL '\(copy)")
 					return copy
 				} catch {
-					ABPLog(ABPLogFileURL, .info, "\(#function): Returning original URL '\(copy)")
 					return original
 				}
 			}
 
-			ABPLog(ABPLogFileURL, ABPLogLevel.warning, "\(#function): Could not add whitelisted websites to filter list URL '\(original)'")
 			return original
 		}
 	}

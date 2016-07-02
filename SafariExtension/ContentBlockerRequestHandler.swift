@@ -21,7 +21,16 @@ import AdBlockKit
 @objc(ABPContentBlockerRequestHandler)
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
     func beginRequest(with context: NSExtensionContext) {
-		ABPLog(ABPLogFileURL, ABPLogLevel.info, "Inside \(#function)")
+		do {
+			guard let libraryURL = FileManager.default().containerURLForSecurityApplicationGroupIdentifier(AdBlockPlus.applicationGroup) else {
+				throw NSError()
+			}
+			let dirURL = try libraryURL.appendingPathComponents([ "Library", "AdBlockPlus Filter Lists" ])
+			try FileManager.default().createDirectory(at: dirURL, withIntermediateDirectories: true, attributes: nil)
+		} catch {
+			fatalError("Could not create AdBlockPlus Filter Lists directory")
+		}
+
 		let abp = AdBlockPlus()
 		abp.activated = true
 

@@ -29,9 +29,24 @@ class FilterListsController: NSViewController {
 		}
 	}
 
+	@IBOutlet private var progressIndicator: NSProgressIndicator!
+	@IBOutlet private var updateButton: NSButton!
+
 	@IBAction private func updateFilterLists(sender: AnyObject?) {
 		if let model = model {
-			model.updateFilterLists(userTriggered: true)
+			progressIndicator.isHidden = false
+			progressIndicator.startAnimation(nil)
+			updateButton.isEnabled = false
+
+			model.updateFilterLists(userTriggered: true) {
+				[weak self] in
+				if let this = self {
+					this.progressIndicator.stopAnimation(nil)
+					this.progressIndicator.isHidden = true
+					this.updateButton.isEnabled = true
+				}
+			}
+
 			model.displayErrorDialogIfNeeded()
 		} else {
 			NSBeep()

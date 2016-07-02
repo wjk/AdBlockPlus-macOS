@@ -142,6 +142,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 		}
 	}
 
+	private var _filterListUpdateCallback: (() -> ())?
 	override var filterLists: [String : [String : AnyObject]] {
 		get {
 			return super.filterLists
@@ -163,11 +164,16 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 			if installedVersion < downloadedVersion && wasUpdating && !updating {
 				// Force the content blocker to reload the newer version of the filter lists
 				reloadContentBlocker(completion: {
-					(error) in
+					[weak self] (error) in
 					if let error = error {
 						var note = Notification(name: ABPDisplayErrorNotification)
 						note.userInfo = [ "error": error ]
 						note.post()
+					} else {
+						if let callback = self?._filterListUpdateCallback {
+							callback()
+						}
+						self?._filterListUpdateCallback = nil
 					}
 				})
 			}
@@ -212,7 +218,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 		}
 	}
 
-	func updateFilterLists(userTriggered: Bool) {
+	func updateFilterLists(userTriggered: Bool, completion: (() -> ())? = nil) {
 		guard let backgroundSession = self.backgroundSession else {
 			if userTriggered {
 				needsDisplayError = true
@@ -237,6 +243,8 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 			downloadTasks[filterListName] = task
 			task.resume()
 		}
+
+		_filterListUpdateCallback = completion
 		self.filterLists = filterLists
 	}
 

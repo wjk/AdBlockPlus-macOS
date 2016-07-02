@@ -340,17 +340,26 @@
                                     <action selector="updateFilterListsWithSender:" target="VkE-YF-Rqp" id="MGe-Tg-u04"/>
                                 </connections>
                             </button>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="hED-57-Bdk">
+                                <rect key="frame" x="154" y="231" width="16" height="16"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstItem="AMS-gy-wmz" firstAttribute="top" secondItem="b6S-QJ-kYD" secondAttribute="top" constant="20" symbolic="YES" id="0Fh-dn-7sP"/>
                             <constraint firstItem="gWr-Jk-U1x" firstAttribute="leading" secondItem="b6S-QJ-kYD" secondAttribute="leading" constant="20" symbolic="YES" id="Jvt-Xf-KeM"/>
                             <constraint firstItem="AMS-gy-wmz" firstAttribute="leading" secondItem="b6S-QJ-kYD" secondAttribute="leading" constant="20" symbolic="YES" id="NoO-wc-Cl0"/>
                             <constraint firstItem="gWr-Jk-U1x" firstAttribute="top" secondItem="AMS-gy-wmz" secondAttribute="bottom" constant="20" symbolic="YES" id="P1t-Ke-Dja"/>
+                            <constraint firstItem="hED-57-Bdk" firstAttribute="leading" secondItem="gWr-Jk-U1x" secondAttribute="trailing" constant="8" id="XO7-Sp-TYc"/>
                             <constraint firstAttribute="bottom" secondItem="ulu-i8-3X0" secondAttribute="bottom" constant="20" symbolic="YES" id="emo-ry-Kef"/>
                             <constraint firstItem="ulu-i8-3X0" firstAttribute="leading" secondItem="b6S-QJ-kYD" secondAttribute="leading" constant="20" symbolic="YES" id="fte-ek-kLD"/>
+                            <constraint firstItem="hED-57-Bdk" firstAttribute="centerY" secondItem="gWr-Jk-U1x" secondAttribute="centerY" id="oXp-Um-XCj"/>
                             <constraint firstAttribute="trailing" secondItem="AMS-gy-wmz" secondAttribute="trailing" constant="20" symbolic="YES" id="vPj-1C-tg5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressIndicator" destination="hED-57-Bdk" id="cFU-wt-1tc"/>
+                        <outlet property="updateButton" destination="gWr-Jk-U1x" id="DCH-Ou-cFb"/>
+                    </connections>
                 </viewController>
                 <customObject id="3at-y1-FwG" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

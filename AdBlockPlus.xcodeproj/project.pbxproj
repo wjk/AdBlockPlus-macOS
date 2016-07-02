@@ -17,7 +17,6 @@
 		1F6DAE611D25AE660079DEB7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6DAE601D25AE660079DEB7 /* Cocoa.framework */; };
 		1F6DAE681D25AE660079DEB7 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6DAE671D25AE660079DEB7 /* ContentBlockerRequestHandler.swift */; };
 		1F6DAE6C1D25AE660079DEB7 /* SafariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1F6DAE5E1D25AE660079DEB7 /* SafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1F6DAE721D25AEB70079DEB7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F6DAE711D25AEB70079DEB7 /* InfoPlist.strings */; };
 		1F6DAE731D25AEEE0079DEB7 /* AdBlockKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE46EED1D2479760061C8CB /* AdBlockKit.framework */; };
 		1F92700A1D2621B800FD41C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F92700C1D2621B800FD41C8 /* InfoPlist.strings */; };
 		1F9D7ED41D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D7ED31D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m */; };
@@ -31,6 +30,7 @@
 		1FE46EF41D2479760061C8CB /* AdBlockKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE46EED1D2479760061C8CB /* AdBlockKit.framework */; };
 		1FE46EF51D2479760061C8CB /* AdBlockKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE46EED1D2479760061C8CB /* AdBlockKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1FE46EFB1D247A1D0061C8CB /* AdBlockPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE46EFA1D247A1D0061C8CB /* AdBlockPlus.swift */; };
+		1FE61C751D27714B0096152F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FE61C771D27714B0096152F /* InfoPlist.strings */; };
 		1FFEDF471D2471D800A7E0DA /* NotificationUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,7 +89,6 @@
 		1F6DAE661D25AE660079DEB7 /* SafariExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SafariExtension.entitlements; sourceTree = "<group>"; };
 		1F6DAE671D25AE660079DEB7 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
 		1F6DAE691D25AE660079DEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F6DAE711D25AEB70079DEB7 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		1F92700B1D2621B800FD41C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1F9D7ED31D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABPGetApplicationSigningIdentifier.m; sourceTree = "<group>"; };
 		1F9D7ED51D2497330096D3A9 /* AdBlockPlusExtras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBlockPlusExtras.swift; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		1FE46EEF1D2479760061C8CB /* AdBlockKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdBlockKit.h; sourceTree = "<group>"; };
 		1FE46EF11D2479760061C8CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FE46EFA1D247A1D0061C8CB /* AdBlockPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBlockPlus.swift; sourceTree = "<group>"; };
+		1FE61C761D27714B0096152F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1FFEDF461D2471D800A7E0DA /* NotificationUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,7 +160,7 @@
 			children = (
 				1F6DAE691D25AE660079DEB7 /* Info.plist */,
 				1F6DAE661D25AE660079DEB7 /* SafariExtension.entitlements */,
-				1F6DAE711D25AEB70079DEB7 /* InfoPlist.strings */,
+				1FE61C771D27714B0096152F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -366,7 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F6DAE721D25AEB70079DEB7 /* InfoPlist.strings in Resources */,
+				1FE61C751D27714B0096152F /* InfoPlist.strings in Resources */,
 				1F0981461D2618FF00116A03 /* Filter Lists in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +464,14 @@
 				1FCD372F1D10A32400A70971 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1FE61C771D27714B0096152F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FE61C761D27714B0096152F /* Base */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -24,16 +24,24 @@ asl_object_t ABPLogFileOpen(NSURL *logFileURL) {
 		fileHandles = [NSMutableDictionary dictionary];
 	});
 
-	NSFileHandle *handle = fileHandles[logFileURL];
-	if (handle == nil) {
+	NSNumber *fdNumber = fileHandles[logFileURL];
+	if (fdNumber == nil) {
 		NSError *error;
-		handle = [NSFileHandle fileHandleForWritingToURL:logFileURL error:&error];
-		NSCAssert(handle != nil, @"Could not create NSFileHandle for URL '%@': %@", logFileURL, error);
-		fileHandles[logFileURL] = handle;
+		BOOL success = [[NSFileManager defaultManager] createDirectoryAtURL:[logFileURL URLByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:&error];
+		NSCAssert(success, @"Could not create directory for log file URL '%@': %@", logFileURL, error);
+		[[NSData data] writeToURL:logFileURL atomically:YES];
+
+		NSCAssert(logFileURL.isFileURL, @"%s() only supports file URLs", __FUNCTION__);
+		int fd = open(logFileURL.fileSystemRepresentation, O_WRONLY | O_APPEND | O_CREAT, 0644);
+		NSCAssert(fd != -1, @"Could not open URL '%@' (error = %d)", logFileURL, errno);
+
+		fdNumber = @(fd);
+		fileHandles[logFileURL] = fdNumber;
 	}
 
 	asl_object_t aslhandle = asl_open(NULL, "me.sunsol.AdBlockPlus", 0);
-	asl_add_log_file(aslhandle, handle.fileDescriptor);
+	asl_add_log_file(aslhandle, fdNumber.intValue);
+	NSCAssert(aslhandle != NULL, @"Could not open ASL handle!");
 	return aslhandle;
 }
 

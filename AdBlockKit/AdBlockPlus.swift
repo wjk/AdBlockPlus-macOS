@@ -58,7 +58,7 @@ public class AdBlockPlus: NSObject {
 
 		adBlockPlusDetails.register([
 			ABPActivatedDefaultsKey: false,
-			ABPEnabledDefaultsKey: true,
+			ABPEnabledDefaultsKey: false,
 			ABPAcceptableAdsEnabledDefaultsKey: true,
 			ABPInstalledVersionDefaultsKey: 0,
 			ABPDownloadedVersionDefaultsKey: 1,

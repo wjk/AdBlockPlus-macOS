@@ -99,43 +99,43 @@ public class AdBlockPlus: NSObject {
 		}
 	}
 
-	public var enabled = false {
+	public var enabled: Bool {
 		didSet {
 			adBlockPlusDetails.set(enabled, forKey: ABPEnabledDefaultsKey)
 		}
 	}
 
-	public var acceptableAdsEnabled = false {
+	public var acceptableAdsEnabled: Bool {
 		didSet {
 			adBlockPlusDetails.set(acceptableAdsEnabled, forKey: ABPAcceptableAdsEnabledDefaultsKey)
 		}
 	}
 
-	public var activated = false {
+	public var activated: Bool {
 		didSet {
 			adBlockPlusDetails.set(activated, forKey: ABPActivatedDefaultsKey)
 		}
 	}
 
-	public var installedVersion = -1 {
+	public var installedVersion: Int {
 		didSet {
 			adBlockPlusDetails.set(installedVersion, forKey: ABPInstalledVersionDefaultsKey)
 		}
 	}
 
-	public var downloadedVersion = -1 {
+	public var downloadedVersion: Int {
 		didSet {
 			adBlockPlusDetails.set(downloadedVersion, forKey: ABPDownloadedVersionDefaultsKey)
 		}
 	}
 
-	public var filterLists: [String: [String: AnyObject]] = [:] {
+	public var filterLists: [String: [String: AnyObject]] {
 		didSet {
 			adBlockPlusDetails.set(filterLists, forKey: ABPFilterListsDefaultsKey)
 		}
 	}
 
-	public var whitelistedWebsites: [String] = [] {
+	public var whitelistedWebsites: [String] {
 		didSet {
 			adBlockPlusDetails.set(whitelistedWebsites, forKey: ABPWhitelistedWebsitesDefaultsKey)
 		}

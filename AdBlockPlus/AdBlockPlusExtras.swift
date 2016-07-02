@@ -97,7 +97,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 
 	@objc var updating: Bool {
 		get {
-			let values = valuesArray(dict: downloadTasks) as NSArray
+			let values = valuesArray(dict: filterLists) as NSArray
 
 			if let updatingObj = values.value(forKeyPath: "@sum.updating"), updating = updatingObj as? NSNumber {
 				return updating.intValue > 0
@@ -109,7 +109,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 
 	@objc var lastUpdate: Date? {
 		get {
-			let values = valuesArray(dict: downloadTasks) as NSArray
+			let values = valuesArray(dict: filterLists) as NSArray
 			if let date = values.value(forKeyPath: "@min.lastUpdate") {
 				// This seemingly spurious value silences a Swift compiler warning.
 				let date = date as! Date
@@ -300,6 +300,8 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 
 				do {
 					guard var destination = fileManager.containerURLForSecurityApplicationGroupIdentifier(AdBlockPlus.applicationGroup) else { return }
+					try destination.appendPathComponent("Library")
+					try destination.appendPathComponent("AdBlockPlus Filter Lists")
 					try destination.appendPathComponent(filterList["filename"] as! String)
 					
 					try fileManager.moveItem(at: location, to: destination)

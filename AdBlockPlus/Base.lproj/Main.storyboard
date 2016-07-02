@@ -317,7 +317,7 @@
                                 <rect key="frame" x="18" y="269" width="584" height="51"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="xhf-67-mo6">
                                     <font key="font" metaFont="system"/>
-                                    <string key="title">AdBlock Plus uses the EasyList filter list to determine what parts of a webpage are advertisements. The EasyList is dual-licensed under the Creative Commons Attribution–ShareAlike license and the GNU General Public License.</string>
+                                    <string key="title">AdBlock Plus uses the EasyList filter list to determine what parts of a webpage are advertisements. The EasyList is dual-licensed under the Creative Commons Attribution–ShareAlike license and the GNU General Public License. http://easylist.github.io/</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>

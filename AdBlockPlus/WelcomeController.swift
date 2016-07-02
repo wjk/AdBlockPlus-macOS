@@ -48,9 +48,9 @@ class WelcomeController: NSViewController {
 			toggleButton.isEnabled = true
 
 			if model.enabled {
-				toggleButton.title = localize("Enable AdBlock Plus for all websites", "Localizable")
-			} else {
 				toggleButton.title = localize("Disable AdBlock Plus for all websites", "Localizable")
+			} else {
+				toggleButton.title = localize("Enable AdBlock Plus for all websites", "Localizable")
 			}
 		} else {
 			toggleButton.isEnabled = false

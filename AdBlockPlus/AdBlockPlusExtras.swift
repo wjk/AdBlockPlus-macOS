@@ -131,6 +131,17 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 		}
 	}
 
+	override var enabled: Bool {
+		didSet {
+			reloadContentBlocker {
+				(error) in
+				if let error = error {
+					NSLog("Could not reload content blocker extension: '\(error)'")
+				}
+			}
+		}
+	}
+
 	override var filterLists: [String : [String : AnyObject]] {
 		get {
 			return super.filterLists

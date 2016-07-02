@@ -21,6 +21,7 @@ import AdBlockKit
 @objc(ABPContentBlockerRequestHandler)
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
     func beginRequest(with context: NSExtensionContext) {
+		NSLog("AdBlockPlus Safari Extension: Entry")
 		do {
 			guard let libraryURL = FileManager.default().containerURLForSecurityApplicationGroupIdentifier(AdBlockPlus.applicationGroup) else {
 				throw NSError()

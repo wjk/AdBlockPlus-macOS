@@ -42,6 +42,7 @@ extension AdBlockPlus {
 		var array: [AnyObject] = try JSONSerialization.jsonObject(with: inputData) as! [AnyObject]
 
 		for website in whitelist {
+			NSLog("AdBlockPlus Safari Extension: Merging whitelist entry for domain '\(website)'")
 			let whitelistingRule = [
 				"trigger": [ "url-filter": ".*", "if-domain": [website] ],
 				"action": [ "type": "ignore-previous-rules" ]

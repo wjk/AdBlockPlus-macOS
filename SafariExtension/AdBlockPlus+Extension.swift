@@ -59,7 +59,10 @@ extension AdBlockPlus {
 			let filename: String
 
 			if !enabled {
-				filename = "empty"
+				guard let url = Bundle(for: ContentBlockerRequestHandler.self).urlForResource("empty", withExtension: "json", subdirectory: "Filter Lists") else {
+					fatalError("Could not retrieve empty.json file")
+				}
+				return url
 			} else if acceptableAdsEnabled {
 				filename = "easylist+exceptionrules_content_blocker"
 			} else {
@@ -98,6 +101,13 @@ extension AdBlockPlus {
 
 	var activeFilterListURLWithWhitelistedWebsites: URL {
 		get {
+			if !enabled {
+				guard let url = Bundle(for: ContentBlockerRequestHandler.self).urlForResource("empty", withExtension: "json", subdirectory: "Filter Lists") else {
+					fatalError("Could not retrieve empty.json file")
+				}
+				return url
+			}
+
 			let original = activeFilterListURL
 			if let filename = original.lastPathComponent {
 				if filename == "empty.json" {

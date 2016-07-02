@@ -86,6 +86,7 @@ class ViewController: NSViewController {
 		}
 
 		currentViewController = (storyboard.instantiateController(withIdentifier: "ABPWelcomePane") as! NSViewController)
+		currentViewController?.representedObject = representedObject
 		viewBox.contentView = currentViewController!.view
 	}
 	

@@ -21,17 +21,17 @@ import SafariServices
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(_ notification: Notification) {
-		NSError.setUserInfoValueProvider(forDomain: SFContentBlockerErrorDomain) {
+		NSError.setUserInfoValueProvider(forDomain: SFErrorDomain) {
 			(error, userInfoKey) -> AnyObject? in
-			assert(error.domain == SFContentBlockerErrorDomain, "Unexpected error domain in user info callback")
+			assert(error.domain == SFErrorDomain, "Unexpected error domain in user info callback")
 			switch userInfoKey {
 			case NSLocalizedDescriptionKey:
 				switch error.code {
-				case SFContentBlockerErrorCode.noExtensionFound.rawValue:
+				case SFErrorCode.noExtensionFound.rawValue:
 					return localize("Could not update the Safari extension because it has not been registered.", "Localizable")
-				case SFContentBlockerErrorCode.noAttachmentFound.rawValue:
+				case SFErrorCode.noAttachmentFound.rawValue:
 					return localize("Could not update the Safari extension because it could not find its rules file.", "Localizable")
-				case SFContentBlockerErrorCode.loadingInterrupted.rawValue:
+				case SFErrorCode.loadingInterrupted.rawValue:
 					return localize("An error occurred while loading the Safari extension.", "Localizable")
 				default:
 					return nil

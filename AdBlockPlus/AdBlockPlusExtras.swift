@@ -41,7 +41,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 		super.init()
 
 		let configuration = URLSessionConfiguration.background(withIdentifier: self.backgroundSessionConfigurationIdentifier)
-		backgroundSession = URLSession(configuration: configuration, delegate: self, delegateQueue: OperationQueue.main())
+		backgroundSession = URLSession(configuration: configuration, delegate: self, delegateQueue: OperationQueue.main)
 		needsDisplayError = adBlockPlusDetails.bool(forKey: ABPNeedsDisplayErrorDialogDefaultsKey)
 
 		backgroundSession?.getAllTasks(completionHandler: {
@@ -57,7 +57,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 					}
 					set.remove(filterListName)
 
-					if let listDict = this.filterLists[filterListName], ident = listDict["taskIdentifier"] where (ident as! Int) == task.taskIdentifier {
+					if let listDict = this.filterLists[filterListName], let ident = listDict["taskIdentifier"] , (ident as! Int) == task.taskIdentifier {
 						this.downloadTasks[filterListName] = task
 					} else {
 						task.cancel()
@@ -99,7 +99,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 		get {
 			let values = valuesArray(dict: filterLists) as NSArray
 
-			if let updatingObj = values.value(forKeyPath: "@sum.updating"), updating = updatingObj as? NSNumber {
+			if let updatingObj = values.value(forKeyPath: "@sum.updating"), let updating = updatingObj as? NSNumber {
 				return updating.intValue > 0
 			} else {
 				return false
@@ -123,7 +123,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 	private var anyLastUpdateFailed: Bool {
 		get {
 			let values = valuesArray(dict: filterLists) as NSArray
-			if let sumObj = values.value(forKeyPath: "@sum.lastUpdateFailed"), sum = sumObj as? NSNumber {
+			if let sumObj = values.value(forKeyPath: "@sum.lastUpdateFailed"), let sum = sumObj as? NSNumber {
 				return sum.intValue > 0
 			} else {
 				return false
@@ -255,7 +255,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 
 		// Do not show the message if the update was automatically triggered.
 		let values = valuesArray(dict: filterLists) as NSArray
-		if let sum = values.value(forKey: "@sum.userTriggered") as? NSNumber where sum.intValue == 0 {
+		if let sum = values.value(forKey: "@sum.userTriggered") as? NSNumber , sum.intValue == 0 {
 			return
 		}
 
@@ -276,8 +276,8 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 		guard let filterListName = task.originalRequest?.url?.absoluteString else { return }
 		guard var filterList = self.filterLists[filterListName] else { return }
 
-		if let taskIdObj = filterList["taskIdentifier"], taskId = taskIdObj as? Int where taskId == task.taskIdentifier {
-			if let updatingObj = filterList["updating"], updating = updatingObj	as? Bool where updating {
+		if let taskIdObj = filterList["taskIdentifier"], let taskId = taskIdObj as? Int , taskId == task.taskIdentifier {
+			if let updatingObj = filterList["updating"], let updating = updatingObj	as? Bool , updating {
 				filterList["updating"] = false
 				filterList["lastUpdateFailed"] = true
 				filterList.removeValue(forKey: "taskIdentifier")
@@ -295,7 +295,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 		guard let filterListName = downloadTask.originalRequest?.url?.absoluteString else { return }
 		guard var filterList = self.filterLists[filterListName] else { return }
 
-		if let taskIdObj = filterList["taskIdentifier"], taskId = taskIdObj as? Int where taskId == downloadTask.taskIdentifier {
+		if let taskIdObj = filterList["taskIdentifier"], let taskId = taskIdObj as? Int , taskId == downloadTask.taskIdentifier {
 			if let response = downloadTask.response as? HTTPURLResponse {
 				if response.statusCode < 200 || response.statusCode > 300 {
 					let desc = HTTPURLResponse.localizedString(forStatusCode: response.statusCode)

@@ -43,7 +43,7 @@ class WindowController: NSWindowController {
 		window?.title = localize("AdBlockPlus Settings", "Localizable")
 		window?.titleVisibility = .hidden
 
-		NotificationCenter.default().addObserver(name: ABPDisplayErrorNotification, sender: nil, owner: self) {
+		NotificationCenter.default.addObserver(name: ABPDisplayErrorNotification, sender: nil, owner: self) {
 			[weak self] note in
 			guard let userInfo = note.userInfo else { return }
 			let error = userInfo["error"] as! NSError
@@ -67,7 +67,7 @@ class ViewController: NSViewController {
 		representedObject = AdBlockPlusExtras()
 
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
-		NotificationCenter.default().addObserver(name: ABPMainViewChangedNotification, sender: nil, owner: self) {
+		NotificationCenter.default.addObserver(name: ABPMainViewChangedNotification, sender: nil, owner: self) {
 			[weak self] note in
 			guard let userInfo = note.userInfo else { return }
 			guard let viewIdObj = userInfo["view"] else { return }

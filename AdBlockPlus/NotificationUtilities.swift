@@ -40,7 +40,7 @@ extension NotificationCenter {
 
 	func addObserver(name: Notification.Name?, sender: AnyObject?, owner: AnyObject, handler: (Notification) -> Void) {
 		let holder: NotificationListenerHolder
-		if let holderPtr = objc_getAssociatedObject(owner, &NotificationListenerHolder.Key), holderObj = holderPtr as? NotificationListenerHolder {
+		if let holderPtr = objc_getAssociatedObject(owner, &NotificationListenerHolder.Key), let holderObj = holderPtr as? NotificationListenerHolder {
 			holder = holderObj
 		} else {
 			holder = NotificationListenerHolder()
@@ -48,14 +48,14 @@ extension NotificationCenter {
 			objc_setAssociatedObject(owner, &NotificationListenerHolder.Key, holder, .OBJC_ASSOCIATION_RETAIN)
 		}
 
-		let listener = self.addObserver(forName: name, object: sender, queue: OperationQueue.main(), using: handler)
+		let listener = self.addObserver(forName: name, object: sender, queue: OperationQueue.main, using: handler)
 		holder.listeners.append(listener)
 	}
 }
 
 extension Notification {
 	func post() {
-		NotificationCenter.default().post(self)
+		NotificationCenter.default.post(self)
 	}
 
 	func post(center: NotificationCenter) {

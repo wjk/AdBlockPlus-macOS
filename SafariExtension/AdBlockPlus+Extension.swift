@@ -19,7 +19,7 @@ import Foundation
 import AdBlockKit
 
 private func _createLogFileURL() -> URL {
-	let libraryURL = try! FileManager.default().urlForDirectory(.libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+	let libraryURL = try! FileManager.default.urlForDirectory(.libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
 	return try! libraryURL.appendingPathComponents(["Logs", "AdBlockPlusSafariExtension.log"])
 }
 internal let ABPLogFileURL = _createLogFileURL()
@@ -71,8 +71,8 @@ extension AdBlockPlus {
 			}
 
 			for (_, filterList) in filterLists {
-				if let filterListFilename = filterList["filename"] as? String where filename == filterListFilename {
-					if let downloaded = filterList["downloaded"] as? Bool where !downloaded {
+				if let filterListFilename = filterList["filename"] as? String, filename == filterListFilename {
+					if let downloaded = filterList["downloaded"] as? Bool, !downloaded {
 						break
 					}
 

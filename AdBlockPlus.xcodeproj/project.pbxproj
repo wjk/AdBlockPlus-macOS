@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1F0981431D26174D00116A03 /* AdBlockPlus+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0981421D26174D00116A03 /* AdBlockPlus+Extension.swift */; };
 		1F0981461D2618FF00116A03 /* Filter Lists in Resources */ = {isa = PBXBuildFile; fileRef = 1F0981451D2618FF00116A03 /* Filter Lists */; };
-		1F2A0BD21D271DF100ED1A29 /* ABPLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A0BD11D271DF100ED1A29 /* ABPLogging.m */; };
 		1F40592B1D25936B00BD4B5E /* FilterLists.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F40592A1D25936B00BD4B5E /* FilterLists.plist */; };
 		1F40592F1D2593C200BD4B5E /* ExceptionsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F40592E1D2593C200BD4B5E /* ExceptionsListController.swift */; };
 		1F4B83851D10A774005D0431 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F4B83871D10A774005D0431 /* Localizable.strings */; };
@@ -82,7 +81,6 @@
 /* Begin PBXFileReference section */
 		1F0981421D26174D00116A03 /* AdBlockPlus+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AdBlockPlus+Extension.swift"; sourceTree = "<group>"; };
 		1F0981451D2618FF00116A03 /* Filter Lists */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Filter Lists"; sourceTree = "<group>"; };
-		1F2A0BD11D271DF100ED1A29 /* ABPLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABPLogging.m; sourceTree = "<group>"; };
 		1F40592A1D25936B00BD4B5E /* FilterLists.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterLists.plist; sourceTree = "<group>"; };
 		1F40592E1D2593C200BD4B5E /* ExceptionsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExceptionsListController.swift; sourceTree = "<group>"; };
 		1F4B83861D10A774005D0431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 				1FE46EFA1D247A1D0061C8CB /* AdBlockPlus.swift */,
 				1FE46EEF1D2479760061C8CB /* AdBlockKit.h */,
 				1F9D7ED31D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m */,
-				1F2A0BD11D271DF100ED1A29 /* ABPLogging.m */,
 				1F40592A1D25936B00BD4B5E /* FilterLists.plist */,
 				1FE46EF11D2479760061C8CB /* Info.plist */,
 			);
@@ -433,7 +430,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F9D7ED41D248F8C0096D3A9 /* ABPGetApplicationSigningIdentifier.m in Sources */,
-				1F2A0BD21D271DF100ED1A29 /* ABPLogging.m in Sources */,
 				1FE46EFB1D247A1D0061C8CB /* AdBlockPlus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

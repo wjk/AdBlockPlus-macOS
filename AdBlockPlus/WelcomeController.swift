@@ -35,7 +35,7 @@ class WelcomeController: NSViewController {
 		refreshUI()
 	}
 
-	override var representedObject: AnyObject? {
+	override var representedObject: Any? {
 		didSet {
 			refreshUI()
 		}

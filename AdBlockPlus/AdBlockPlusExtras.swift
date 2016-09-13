@@ -143,7 +143,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 	}
 
 	private var _filterListUpdateCallback: (() -> ())?
-	override var filterLists: [String : [String : AnyObject]] {
+	override var filterLists: [String : [String : Any]] {
 		get {
 			return super.filterLists
 		}
@@ -207,7 +207,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 			[weak self] (error) in
 			self?.reloading = false
 			self?.checkActivatedFlag()
-			completion?(error)
+			completion?(error as NSError?)
 		}
 	}
 
@@ -272,7 +272,7 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 
 	// MARK: URLSessionDownloadDelegate
 
-	func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: NSError?) {
+	func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
 		guard let filterListName = task.originalRequest?.url?.absoluteString else { return }
 		guard var filterList = self.filterLists[filterListName] else { return }
 
@@ -307,10 +307,10 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 				fileManager.delegate = self
 
 				do {
-					guard var destination = fileManager.containerURLForSecurityApplicationGroupIdentifier(AdBlockPlus.applicationGroup) else { return }
-					try destination.appendPathComponent("Library")
-					try destination.appendPathComponent("AdBlockPlus Filter Lists")
-					try destination.appendPathComponent(filterList["filename"] as! String)
+					guard var destination = fileManager.containerURL(forSecurityApplicationGroupIdentifier: AdBlockPlus.applicationGroup) else { return }
+					destination.appendPathComponent("Library")
+					destination.appendPathComponent("AdBlockPlus Filter Lists")
+					destination.appendPathComponent(filterList["filename"] as! String)
 					
 					try fileManager.moveItem(at: location, to: destination)
 				} catch {
@@ -338,7 +338,8 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 
 	// MARK: FileManagerDelegate
 
-	func fileManager(_ fileManager: FileManager, shouldProceedAfterError error: NSError, movingItemAt srcURL: URL, to dstURL: URL) -> Bool {
+	func fileManager(_ fileManager: FileManager, shouldProceedAfterError error: Error, movingItemAt srcURL: URL, to dstURL: URL) -> Bool {
+		let error = error as NSError
 		if error.code == NSFileWriteFileExistsError {
 			return true
 		} else {

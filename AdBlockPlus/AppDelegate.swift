@@ -23,21 +23,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(_ notification: Notification) {
 		NSError.setUserInfoValueProvider(forDomain: SFErrorDomain) {
 			(error, userInfoKey) -> AnyObject? in
+			let error = error as NSError
 			assert(error.domain == SFErrorDomain, "Unexpected error domain in user info callback")
+			
 			switch userInfoKey {
 			case NSLocalizedDescriptionKey:
 				switch error.code {
-				case SFErrorCode.noExtensionFound.rawValue:
-					return localize("Could not update the Safari extension because it has not been registered.", "Localizable")
-				case SFErrorCode.noAttachmentFound.rawValue:
-					return localize("Could not update the Safari extension because it could not find its rules file.", "Localizable")
-				case SFErrorCode.loadingInterrupted.rawValue:
-					return localize("An error occurred while loading the Safari extension.", "Localizable")
+				case SFErrorDomain.noExtensionFound.rawValue:
+					return localize("Could not update the Safari extension because it has not been registered.", "Localizable") as AnyObject?
+				case SFErrorDomain.noAttachmentFound.rawValue:
+					return localize("Could not update the Safari extension because it could not find its rules file.", "Localizable") as AnyObject?
+				case SFErrorDomain.loadingInterrupted.rawValue:
+					return localize("An error occurred while loading the Safari extension.", "Localizable") as AnyObject?
 				default:
 					return nil
 				}
 			case NSLocalizedRecoverySuggestionErrorKey:
-				return localize("Please try again later.", "Localizable")
+				return localize("Please try again later.", "Localizable") as AnyObject?
 			default:
 				return nil
 			}

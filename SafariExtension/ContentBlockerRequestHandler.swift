@@ -23,10 +23,10 @@ class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
     func beginRequest(with context: NSExtensionContext) {
 		NSLog("AdBlockPlus Safari Extension: Entry")
 		do {
-			guard let libraryURL = FileManager.default.containerURLForSecurityApplicationGroupIdentifier(AdBlockPlus.applicationGroup) else {
+			guard let libraryURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: AdBlockPlus.applicationGroup) else {
 				throw NSError()
 			}
-			let dirURL = try libraryURL.appendingPathComponents([ "Library", "AdBlockPlus Filter Lists" ])
+			let dirURL = libraryURL.appendingPathComponents([ "Library", "AdBlockPlus Filter Lists" ])
 			try FileManager.default.createDirectory(at: dirURL, withIntermediateDirectories: true, attributes: nil)
 		} catch {
 			fatalError("Could not create AdBlockPlus Filter Lists directory")

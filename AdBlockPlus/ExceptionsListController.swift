@@ -43,7 +43,7 @@ class ExceptionsListController: NSViewController, NSTableViewDataSource, NSTable
 	}
 
 	private var _viewLoaded = false
-	override var representedObject: AnyObject? {
+	override var representedObject: Any? {
 		didSet {
 			if _viewLoaded {
 				reloadView()

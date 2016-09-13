@@ -37,7 +37,7 @@ class AddTextualEntryTableCellView: NSTableCellView {
 		confirmAction?(self)
 	}
 
-	@IBAction override func cancelOperation(_ sender: AnyObject?) {
+	@IBAction override func cancelOperation(_ sender: Any?) {
 		cancelAction?(self)
 	}
 }

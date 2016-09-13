@@ -28,7 +28,7 @@ private let ABPWhitelistedWebsitesDefaultsKey = "AdblockPlusWhitelistedWebsites"
 
 private let AdblockPlusSafariExtension = "AdblockPlusSafariExtension"
 
-public class AdBlockPlus: NSObject {
+open class AdBlockPlus: NSObject {
 	public static var applicationGroup: String {
 		get {
 			let teamID = ABPGetApplicationSigningIdentifier() ?? "group"
@@ -43,7 +43,7 @@ public class AdBlockPlus: NSObject {
 		adBlockPlusDetails = defaults
 		super.init()
 
-		guard let path = Bundle(for: AdBlockPlus.self).urlForResource("FilterLists", withExtension: "plist") else {
+		guard let path = Bundle(for: AdBlockPlus.self).url(forResource: "FilterLists", withExtension: "plist") else {
 			fatalError("FilterLists.plist not found")
 		}
 
@@ -56,7 +56,7 @@ public class AdBlockPlus: NSObject {
 			filterLists = [:]
 		}
 
-		adBlockPlusDetails.register([
+		adBlockPlusDetails.register(defaults: [
 			ABPActivatedDefaultsKey: false,
 			ABPEnabledDefaultsKey: false,
 			ABPAcceptableAdsEnabledDefaultsKey: true,
@@ -95,7 +95,7 @@ public class AdBlockPlus: NSObject {
 		}
 	}
 
-	public var enabled: Bool {
+	open var enabled: Bool {
 		get {
 			return adBlockPlusDetails.bool(forKey: ABPEnabledDefaultsKey)
 		}
@@ -145,9 +145,9 @@ public class AdBlockPlus: NSObject {
 		}
 	}
 
-	public var filterLists: [String: [String: AnyObject]] {
+	open var filterLists: [String: [String: Any]] {
 		get {
-			return adBlockPlusDetails.object(forKey: ABPFilterListsDefaultsKey) as! [String: [String: AnyObject]]
+			return adBlockPlusDetails.object(forKey: ABPFilterListsDefaultsKey) as! [String: [String: Any]]
 		}
 
 		set {
@@ -155,7 +155,7 @@ public class AdBlockPlus: NSObject {
 		}
 	}
 
-	public var whitelistedWebsites: [String] {
+	open var whitelistedWebsites: [String] {
 		get {
 			return adBlockPlusDetails.object(forKey: ABPWhitelistedWebsitesDefaultsKey) as! [String]
 		}

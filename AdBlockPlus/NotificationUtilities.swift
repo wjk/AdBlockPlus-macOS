@@ -38,7 +38,7 @@ extension NotificationCenter {
 		var listeners: [AnyObject] = []
 	}
 
-	func addObserver(name: Notification.Name?, sender: AnyObject?, owner: AnyObject, handler: (Notification) -> Void) {
+	func addObserver(name: Notification.Name?, sender: AnyObject?, owner: AnyObject, handler: @escaping (Notification) -> Void) {
 		let holder: NotificationListenerHolder
 		if let holderPtr = objc_getAssociatedObject(owner, &NotificationListenerHolder.Key), let holderObj = holderPtr as? NotificationListenerHolder {
 			holder = holderObj

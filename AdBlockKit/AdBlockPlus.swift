@@ -28,7 +28,7 @@ private let ABPWhitelistedWebsitesDefaultsKey = "AdblockPlusWhitelistedWebsites"
 
 private let AdblockPlusSafariExtension = "AdblockPlusSafariExtension"
 
-open class AdBlockPlus: NSObject {
+@objc open class AdBlockPlus: NSObject {
 	public static var applicationGroup: String {
 		get {
 			let teamID = ABPGetApplicationSigningIdentifier() ?? "group"
@@ -81,15 +81,15 @@ open class AdBlockPlus: NSObject {
 
 	// MARK: Properties
 
-	private(set) public var adBlockPlusDetails: UserDefaults
+	private(set) open var adBlockPlusDetails: UserDefaults
 
-	public var contentBlockerIdentifier: String {
+	open var contentBlockerIdentifier: String {
 		get {
 			return "me.sunsol.AdBlockPlus.SafariExtension"
 		}
 	}
 
-	public var backgroundSessionConfigurationIdentifier: String {
+	open var backgroundSessionConfigurationIdentifier: String {
 		get {
 			return "me.sunsol.AdBlockPlus.BackgroundSession"
 		}
@@ -105,7 +105,7 @@ open class AdBlockPlus: NSObject {
 		}
 	}
 
-	public var acceptableAdsEnabled: Bool {
+	open var acceptableAdsEnabled: Bool {
 		get {
 			return adBlockPlusDetails.bool(forKey: ABPAcceptableAdsEnabledDefaultsKey)
 		}
@@ -115,7 +115,7 @@ open class AdBlockPlus: NSObject {
 		}
 	}
 
-	public var activated: Bool {
+	open var activated: Bool {
 		get {
 			return adBlockPlusDetails.bool(forKey: ABPActivatedDefaultsKey)
 		}
@@ -125,7 +125,7 @@ open class AdBlockPlus: NSObject {
 		}
 	}
 
-	public var installedVersion: Int {
+	open var installedVersion: Int {
 		get {
 			return adBlockPlusDetails.integer(forKey: ABPInstalledVersionDefaultsKey)
 		}
@@ -135,7 +135,7 @@ open class AdBlockPlus: NSObject {
 		}
 	}
 
-	public var downloadedVersion: Int {
+	open var downloadedVersion: Int {
 		get {
 			return adBlockPlusDetails.integer(forKey: ABPDownloadedVersionDefaultsKey)
 		}

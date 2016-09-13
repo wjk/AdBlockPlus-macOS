@@ -196,6 +196,55 @@ class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDel
 		}
 	}
 
+	// Don't remove these seemingly pointless property definitions;
+	// they prevent the Swift compiler from causing linker errors.
+
+	override var adBlockPlusDetails: UserDefaults {
+		get {
+			return super.adBlockPlusDetails
+		}
+	}
+
+	override var installedVersion: Int {
+		get {
+			return super.installedVersion
+		}
+
+		set {
+			super.installedVersion = newValue
+		}
+	}
+
+	override var downloadedVersion: Int {
+		get {
+			return super.downloadedVersion
+		}
+
+		set {
+			super.downloadedVersion = newValue
+		}
+	}
+
+	override var acceptableAdsEnabled: Bool {
+		get {
+			return super.acceptableAdsEnabled
+		}
+
+		set {
+			super.acceptableAdsEnabled = newValue
+		}
+	}
+
+	override var activated: Bool {
+		get {
+			return super.activated
+		}
+
+		set {
+			super.activated = newValue
+		}
+	}
+
 	// MARK: Methods
 
 	func reloadContentBlocker(completion: ((NSError?) -> ())?) {

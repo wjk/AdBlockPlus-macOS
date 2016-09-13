@@ -39,7 +39,7 @@ internal extension URL {
 extension AdBlockPlus {
 	private static func mergeFilterLists(from input: URL, withWhitelist whitelist: [String], to output: URL) throws {
 		let inputData = try Data(contentsOf: input)
-		var array: [Any] = try JSONSerialization.jsonObject(with: inputData) as! [Any]
+		let array: NSMutableArray = try JSONSerialization.jsonObject(with: inputData, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSMutableArray
 
 		for website in whitelist {
 			NSLog("AdBlockPlus Safari Extension: Merging whitelist entry for domain '\(website)'")
@@ -47,7 +47,7 @@ extension AdBlockPlus {
 				"trigger": [ "url-filter": ".*", "if-domain": [website] ],
 				"action": [ "type": "ignore-previous-rules" ]
 			]
-			array.append(whitelistingRule)
+			array.add(whitelistingRule)
 		}
 
 		let outputData = try JSONSerialization.data(withJSONObject: array)

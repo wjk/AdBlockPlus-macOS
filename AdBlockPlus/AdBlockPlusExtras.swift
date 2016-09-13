@@ -31,9 +31,7 @@ private func valuesArray<K: Hashable, V>(dict: [K: V]) -> [V] {
 	return values
 }
 
-// Due to an Xcode bug, adding a "-" here results in two separators being added
-// to the navigation menu. Please keep this line as it is. Radar 27095772.
-// MARK:
+// MARK: -
 
 private let ABPNeedsDisplayErrorDialogDefaultsKey = "ABPNeedsDisplayErrorDialog"
 class AdBlockPlusExtras: AdBlockPlus, URLSessionDownloadDelegate, FileManagerDelegate {
